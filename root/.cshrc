@@ -34,6 +34,7 @@ alias	lsdir		"ls -al | grep ^d"
 alias	install		"pkg install -y"
 alias	upgrade		"pkg upgrade -y"
 alias	update		"pkg update"
+alias	search		"pkg search \!:1 | grep \!:1"
 
 
 # A righteous umask
