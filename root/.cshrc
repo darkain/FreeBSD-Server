@@ -6,16 +6,35 @@
 # more examples available at /usr/share/examples/csh/
 #
 
-alias h		history 25
-alias j		jobs -l
-alias ls	ls -G
-alias lx	ls -alG
-alias la	ls -aFG
-alias lf	ls -FAG
-alias ll	ls -lAFG
-alias psx	ps aux
-alias grep	grep --color
-alias free	freecolor -o
+# misc aliases
+alias	clr			"clear"
+alias	h			"history 25"
+alias	j			"jobs -l"
+alias	free		"freecolor -o"
+alias	myip		"curl icanhazip.com"
+alias	psx			"ps aux"
+	
+# grep aliases
+alias	grep		"grep --color=auto"
+alias	egrep		"egrep --color=auto"
+alias	fgrep		"fgrep --color=auto"
+alias	zgrep		"zgrep --color=auto"
+alias	zegrep		"zegrep --color=auto"
+alias	zfgrep		"zfgrep --color=auto"
+
+# ls aliases
+alias	l.			"ls -dlG .*"
+alias	ls			"ls -G"
+alias	la			"ls -aG"
+alias	lf			"ls -AG"
+alias	ll			"ls -alG"
+alias	lsdir		"ls -al | grep ^d"
+
+# pkg aliases
+alias	install		"pkg install -y"
+alias	upgrade		"pkg upgrade -y"
+alias	update		"pkg update"
+
 
 # A righteous umask
 umask 22
