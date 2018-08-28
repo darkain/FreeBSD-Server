@@ -4,3 +4,5 @@ set autoindent
 set rebindkeypad
 set smarthome
 set tabsize "4"
+
+include /usr/local/share/nano/*.nanorc
