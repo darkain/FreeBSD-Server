@@ -7,6 +7,7 @@
 #
 
 # misc aliases
+alias	..			"cd .."
 alias	clr			"clear"
 alias	h			"history 25"
 alias	j			"jobs -l"
