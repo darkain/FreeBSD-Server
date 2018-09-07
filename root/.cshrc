@@ -8,6 +8,7 @@
 
 # misc aliases
 alias	..			"cd .."
+alias	cd..		"cd .."
 alias	clr			"clear"
 alias	cls			"clear"
 alias	h			"history 25"
