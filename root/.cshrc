@@ -30,6 +30,7 @@ alias	ls			"ls -G"
 alias	la			"ls -aG"
 alias	lf			"ls -AG"
 alias	ll			"ls -alG"
+alias	dir			"ls -alG"
 alias	lsdir		"ls -al | grep ^d"
 
 # pkg aliases
