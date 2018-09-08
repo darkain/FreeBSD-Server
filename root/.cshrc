@@ -35,10 +35,10 @@ alias	dir			"ls -alG"
 alias	lsdir		"ls -al | grep ^d"
 
 # pkg aliases
-alias	install		"pkg install -y"
-alias	upgrade		"pkg upgrade -y"
-alias	update		"pkg update"
-alias	search		"pkg search \!:1 | grep \!:1"
+alias	inst		"pkg install -y"
+alias	upgr		"pkg upgrade -y"
+alias	updt		"pkg update"
+alias	srch		"pkg search \!:1 | grep \!:1"
 
 
 # A righteous umask
