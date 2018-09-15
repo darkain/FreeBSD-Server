@@ -1,0 +1,2 @@
+ntpdate_enable="YES"
+ntpdate_hosts="0.freebsd.pool.ntp.org 1.freebsd.pool.ntp.org 2.freebsd.pool.ntp.org"
