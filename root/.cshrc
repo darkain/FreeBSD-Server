@@ -16,6 +16,7 @@ alias	j			"jobs -l"
 alias	free		"freecolor -o"
 alias	myip		"curl icanhazip.com"
 alias	psx			"ps aux"
+alias	zt			"zerotier-cli"
 	
 # grep aliases
 alias	grep		"grep --color=auto"
