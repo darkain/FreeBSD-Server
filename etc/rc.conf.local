@@ -1,4 +1,7 @@
-#Power Management
+# ZFS File System
+zfs_enable="YES"
+
+# Power Management
 powerd_enable="YES"
 
 # Network Time
