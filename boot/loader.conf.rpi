@@ -1,0 +1,18 @@
+# Configure USB OTG; see usb_template(4).
+hw.usb.template=3
+umodem_load="YES"
+
+# Multiple console (serial+efi gop) enabled.
+boot_multicons="YES"
+boot_serial="YES"
+
+# Disable the beastie menu and color
+beastie_disable="YES"
+loader_color="NO"
+
+# ZFS File System
+zfs_load="YES"
+vm.kmem_size="150M"
+vm.kmem_size_max="150M"
+vfs.zfs.arc_max="32M"
+vfs.zfs.vdev.cache.size="16M"
