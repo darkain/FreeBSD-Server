@@ -3,6 +3,7 @@ zfs_enable="YES"
 
 # Power Management
 powerd_enable="YES"
+powerd_flags="-p 50"
 
 # Network Time
 ntpdate_enable="YES"
