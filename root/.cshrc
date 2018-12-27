@@ -41,6 +41,13 @@ alias	upgr		"pkg upgrade -y"
 alias	updt		"pkg update"
 alias	srch		"pkg search \!:1 | grep \!:1"
 
+# Linux package aliases
+alias	apt			"pkg"
+alias	apt-get		"pkg"
+alias	apt-cache	"pkg"
+alias	dpkg		"pkg"
+alias	yum			"pkg"
+
 
 # A righteous umask
 umask 22
