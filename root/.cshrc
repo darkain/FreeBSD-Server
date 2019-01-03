@@ -47,7 +47,7 @@ umask 22
 set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
 
 setenv	EDITOR		nano
-setenv	PAGER		more
+setenv	PAGER		less
 setenv	BLOCKSIZE	K
 
 if ($?prompt) then
