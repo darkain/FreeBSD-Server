@@ -17,7 +17,16 @@ alias	.			"cd ."
 alias	cd.			"cd ."
 alias	..			"cd .."
 alias	cd..		"cd .."
-	
+
+#directory listing aliases
+alias	l.			"ls -dlG .*"
+alias	ls			"ls -G"
+alias	la			"ls -aG"
+alias	lf			"ls -AG"
+alias	ll			"ls -alG"
+alias	dir			"ls -alG"
+alias	lsdir		"ls -al | grep ^d"	
+
 # grep aliases
 alias	grep		"grep --color=auto"
 alias	egrep		"egrep --color=auto"
@@ -26,16 +35,7 @@ alias	zgrep		"zgrep --color=auto"
 alias	zegrep		"zegrep --color=auto"
 alias	zfgrep		"zfgrep --color=auto"
 
-# ls aliases
-alias	l.			"ls -dlG .*"
-alias	ls			"ls -G"
-alias	la			"ls -aG"
-alias	lf			"ls -AG"
-alias	ll			"ls -alG"
-alias	dir			"ls -alG"
-alias	lsdir		"ls -al | grep ^d"
-
-# pkg aliases
+# FreeBSD package manager aliases
 alias	inst		"pkg install -y"
 alias	upgr		"pkg upgrade -y"
 alias	updt		"pkg update"
