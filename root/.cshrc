@@ -20,12 +20,11 @@ alias	cd..		"cd .."
 
 #directory listing aliases
 alias	l.			"ls -dlG .*"
-alias	ls			"ls -G"
-alias	la			"ls -aG"
-alias	lf			"ls -AG"
-alias	ll			"ls -alG"
-alias	dir			"ls -alG"
-alias	lsdir		"ls -al | grep ^d"	
+alias	ls			"exa"
+alias	la			"exa -aa"
+alias	ll			"exa -aal"
+alias	dir			"exa -aal"
+alias	lsdir		"exa -aal --color=always | grep "\[1;34md" --color=never"	
 
 # grep aliases
 alias	grep		"grep --color=auto"
