@@ -1,8 +1,4 @@
 # misc aliases
-alias	/			"cd /"
-alias	cd/			"cd /"
-alias	..			"cd .."
-alias	cd..		"cd .."
 alias	clr			"clear"
 alias	cls			"clear"
 alias	h			"history 25"
@@ -11,6 +7,16 @@ alias	free		"freecolor -o"
 alias	myip		"curl icanhazip.com"
 alias	psx			"ps aux"
 alias	zt			"zerotier-cli"
+
+# directory traversal aliases
+alias	~			"cd ~"
+alias	cd~			"cd ~"
+alias	/			"cd /"
+alias	cd/			"cd /"
+alias	.			"cd ."
+alias	cd.			"cd ."
+alias	..			"cd .."
+alias	cd..		"cd .."
 	
 # grep aliases
 alias	grep		"grep --color=auto"
