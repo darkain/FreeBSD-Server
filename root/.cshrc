@@ -1,11 +1,3 @@
-# $FreeBSD: releng/11.2/etc/root/dot.cshrc 278616 2015-02-12 05:35:00Z cperciva $
-#
-# .cshrc - csh resource script, read at beginning of execution by each shell
-#
-# see also csh(1), environ(7).
-# more examples available at /usr/share/examples/csh/
-#
-
 # misc aliases
 alias	..			"cd .."
 alias	cd..		"cd .."
