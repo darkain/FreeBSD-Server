@@ -24,7 +24,7 @@ alias	ls			"exa"
 alias	la			"exa -aa"
 alias	ll			"exa -aal"
 alias	dir			"exa -aal"
-alias	lsdir		"exa -aal --color=always | grep "\[1;34md" --color=never"	
+alias	lsdir		"exa -aal --color=always | grep '\[1;34md' --color=never"	
 
 # grep aliases
 alias	grep		"grep --color=auto"
