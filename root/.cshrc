@@ -4,7 +4,7 @@ alias	cls			"clear"
 alias	h			"history 25"
 alias	j			"jobs -l"
 alias	free		"freecolor -o"
-alias	myip		"curl icanhazip.com"
+alias	myip		"fetch -qo - https://icanhazip.com"
 alias	psx			"ps aux"
 alias	zt			"zerotier-cli"
 
