@@ -7,6 +7,7 @@ alias	free		"freecolor -o"
 alias	myip		"fetch -qo - https://icanhazip.com"
 alias	psx			"ps aux"
 alias	zt			"zerotier-cli"
+alias   ansible     "ansible-3.6"
 
 # directory traversal aliases
 alias	~			"cd ~"
