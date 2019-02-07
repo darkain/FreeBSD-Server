@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pkg install -y exa freecolor curl nano screen
+pkg install -y exa freecolor nano screen grc
