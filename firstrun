@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pkg install -y exa freecolor nano screen tmux grc
+pkg install -y exa freecolor nano screen tmux grc git
