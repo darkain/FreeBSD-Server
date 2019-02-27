@@ -1,0 +1,23 @@
+{
+	"added_words":
+	[
+		"Cospix",
+		"cospix",
+		"Cosplay",
+		"cosplay"
+	],
+	"color_scheme": "Packages/Colorsublime-Themes/Darkain-Mariana.tmTheme",
+	"default_line_ending": "unix",
+	"draw_white_space": "all",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Source Code Pro",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"tab_completion": false,
+	"tab_size": 4,
+	"theme": "Adaptive.sublime-theme",
+	"trim_trailing_white_space_on_save": true
+}
