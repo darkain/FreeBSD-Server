@@ -10,6 +10,18 @@
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns": [
+		".phan",
+		"_bin",
+		"_log",
+		"_minify",
+		"_parsedown",
+		"_pathconvert" ,"_datatables",
+		"_phan",
+		"_phpmailer",
+		"_project",
+		"tinymce",
+	],		
 	"font_face": "Source Code Pro",
 	"font_size": 12,
 	"ignored_packages":
