@@ -20,6 +20,7 @@
 		"_phan",
 		"_phpmailer",
 		"_project",
+		"_scss",
 		"tinymce",
 	],		
 	"font_face": "Source Code Pro",
