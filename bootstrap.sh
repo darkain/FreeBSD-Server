@@ -1,9 +1,22 @@
-#!/bin/sh
+#!/bin/sh -e
 
 # PREP DIRECTORIES
-mkdir /root/.ssh
-mkdir /vince
+mkdir -p /root/.ssh
+mkdir -p /vince
 cd /vince
+
+# RECONFIGURE PKG
+if [ `uname -i` != 'FREENAS64' ]; then
+  if [ `sysctl -n security.jail.jailed` = 0 ]; then
+    sed -i '' 's/: yes/: no/' /usr/local/etc/pkg/repos/local.conf
+    sed -i '' 's/: no/: yes/' /usr/local/etc/pkg/repos/FreeBSD.conf
+  fi
+fi
+
+# REMOVE GIT-LITE
+if pkg info 'git-lite' | grep 'Version'; then
+  pkg remove -y git-lite
+fi
 
 # INSTALL GIT AND CLONE LATEST CONFIG
 pkg install -y git
