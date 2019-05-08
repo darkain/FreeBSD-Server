@@ -1,6 +1,5 @@
 set nowrap
 set smooth
-set rebindkeypad
 set smarthome
 set tabsize "4"
 
