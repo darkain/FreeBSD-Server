@@ -28,13 +28,14 @@ ln -s /vince/root/.login /root/
 ln -s /vince/root/.ssh/authorized_keys /root/.ssh/
 
 # ENABLE SSH
-service sshd stop
 rm /etc/ssh/sshd_config
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 if [ `uname -i` != 'FREENAS64' ]; then
-  echo 'sshd_enable="YES"' > /etc/rc.conf.local
+  echo 'sshd_enable="YES"' >> /etc/rc.conf.local
+elif [ `sysctl -n security.jail.jailed` = 1 ]; then
+  echo 'sshd_enable="YES"' >> /etc/rc.conf.local
 fi
-service sshd start
+service sshd restart
 
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
 csh
