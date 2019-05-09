@@ -6,7 +6,7 @@ mkdir -p /vince
 cd /vince
 
 # RECONFIGURE PKG
-if [ `uname -i` != 'FREENAS64' ]; then
+if [ `uname -i` = 'FREENAS64' ]; then
   if [ `sysctl -n security.jail.jailed` = 0 ]; then
     sed -i '' 's/: yes/: no/' /usr/local/etc/pkg/repos/local.conf
     sed -i '' 's/: no/: yes/' /usr/local/etc/pkg/repos/FreeBSD.conf
@@ -45,10 +45,11 @@ rm /etc/ssh/sshd_config
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 if [ `uname -i` != 'FREENAS64' ]; then
   sysrc 'sshd_enable=YES'
+  service sshd restart
 elif [ `sysctl -n security.jail.jailed` = 1 ]; then
   sysrc 'sshd_enable=YES'
+  service sshd restart
 fi
-service sshd restart
 
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
 csh
