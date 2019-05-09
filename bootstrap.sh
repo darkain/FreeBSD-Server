@@ -44,9 +44,9 @@ ln -s /vince/root/.ssh/authorized_keys /root/.ssh/
 rm /etc/ssh/sshd_config
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 if [ `uname -i` != 'FREENAS64' ]; then
-  echo 'sshd_enable="YES"' >> /etc/rc.conf.local
+  sysrc 'sshd_enable=YES'
 elif [ `sysctl -n security.jail.jailed` = 1 ]; then
-  echo 'sshd_enable="YES"' >> /etc/rc.conf.local
+  sysrc 'sshd_enable=YES'
 fi
 service sshd restart
 
