@@ -10,6 +10,7 @@ alias	myip6		"fetch -6qo - http://icanhazip.com"
 alias	psx			"ps aux"
 alias	zt			"zerotier-cli"
 alias   ansible     "ansible-3.6"
+alias	time		"/usr/bin/time -p"
 
 # directory traversal aliases
 alias	~			"cd ~"
