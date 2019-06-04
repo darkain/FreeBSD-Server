@@ -11,6 +11,7 @@ alias	psx			"ps aux"
 alias	zt			"zerotier-cli"
 alias   ansible     "ansible-3.6"
 alias	time		"/usr/bin/time -p"
+alias	quit		"exit"
 
 # directory traversal aliases
 alias	~			"cd ~"
