@@ -1,18 +1,30 @@
 # misc aliases
-alias	clr			"clear"
-alias	cls			"clear"
-alias	h			"history 25"
-alias	j			"jobs -l"
-alias	free		"freecolor -o"
-alias	myip		"fetch -qo - http://icanhazip.com"
-alias	myip4		"fetch -4qo - http://icanhazip.com"
-alias	myip6		"fetch -6qo - http://icanhazip.com"
-alias	ipconfig	"ifconfig"
-alias	psx			"ps aux"
-alias	zt			"zerotier-cli"
+alias   clr         "clear"
+alias   cls         "clear"
+alias   h           "history 25"
+alias   j           "jobs -l"
+alias   ipconfig    "ifconfig"
+alias   psx         "ps aux"
+alias   zt          "zerotier-cli"
 alias   ansible     "ansible-3.6"
-alias	time		"/usr/bin/time -p"
-alias	quit		"exit"
+alias   quit        "exit"
+
+
+# FreeBSD only aliases
+if (`uname` == 'FreeBSD') then
+    alias   time    "/usr/bin/time -p"
+    alias   free    "freecolor -o"
+    alias   myip    "fetch -qo - http://icanhazip.com"
+    alias   myip4   "fetch -4qo - http://icanhazip.com"
+    alias   myip6   "fetch -6qo - http://icanhazip.com"
+
+# Linux only aliases
+else
+    alias   myip    "wget -qO - http://icanhazip.com"
+    alias   myip4   "wget -4qO - http://icanhazip.com"
+    alias   myip6   "wget -6qO - http://icanhazip.com"
+endif
+
 
 # directory traversal aliases
 alias	~			"cd ~"
@@ -24,13 +36,26 @@ alias	cd.			"cd ."
 alias	..			"cd .."
 alias	cd..		"cd .."
 
-#directory listing aliases
-alias	l.			"ls -dlG .*"
-alias	ls			"exa"
-alias	la			"exa -aa"
-alias	ll			"exa -aal"
-alias	dir			"exa -aal"
-alias	lsdir		"exa -aal --color=always | grep '\[1;34md' --color=never"
+
+# directory listing aliases (without exa)
+if (`whereis -b exa` == 'exa:') then
+	alias	l.		"ls -dlG .*"
+	alias	la		ls -aF
+	alias	lf		ls -FA
+	alias	ll		ls -lAF
+	alias	dir		ls -lAF
+	alias	lsdir	"ls -lAF | grep '\[1;34md' --color=never"
+
+# directory listing aliases (with exa)
+else
+	alias	l.			"ls -dlG .*"
+	alias	ls			"exa"
+	alias	la			"exa -aa"
+	alias	ll			"exa -aal"
+	alias	dir			"exa -aal"
+	alias	lsdir		"exa -aal --color=always | grep '\[1;34md' --color=never"
+endif
+
 
 # grep aliases
 alias	grep		"grep --color=auto"
@@ -40,18 +65,24 @@ alias	zgrep		"zgrep --color=auto"
 alias	zegrep		"zegrep --color=auto"
 alias	zfgrep		"zfgrep --color=auto"
 
+
 # FreeBSD package manager aliases
-alias	inst		"pkg install -y"
-alias	upgr		"pkg upgrade -y"
-alias	updt		"pkg update"
-alias	srch		"pkg search \!:1 | grep \!:1"
+if (`uname` == 'FreeBSD') then
+	alias	inst	"pkg install -y"
+	alias	upgr	"pkg upgrade -y"
+	alias	updt	"pkg update"
+	alias	srch	"pkg search \!:1 | grep \!:1"
+endif
+
 
 # Linux package aliases
-alias	apt			"pkg"
-alias	apt-get		"pkg"
-alias	apt-cache	"pkg"
-alias	dpkg		"pkg"
-alias	yum			"pkg"
+if (`uname` == 'FreeBSD') then
+	alias	apt			"pkg"
+	alias	apt-get		"pkg"
+	alias	apt-cache	"pkg"
+	alias	dpkg		"pkg"
+	alias	yum			"pkg"
+endif
 
 
 # A righteous umask
