@@ -3,4 +3,5 @@ set smooth
 set smarthome
 set tabsize "4"
 
+#TODO: path based on Linux vs FreeBSD
 include /usr/local/share/nano/*.nanorc
