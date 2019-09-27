@@ -7,19 +7,28 @@ cd /vince
 
 # RECONFIGURE PKG
 if [ `uname -i` = 'FREENAS64' ]; then
-  if [ `sysctl -n security.jail.jailed` = 0 ]; then
-    sed -i '' 's/: yes/: no/' /usr/local/etc/pkg/repos/local.conf
-    sed -i '' 's/: no/: yes/' /usr/local/etc/pkg/repos/FreeBSD.conf
-  fi
+	if [ `sysctl -n security.jail.jailed` = 0 ]; then
+		sed -i '' 's/: yes/: no/' /usr/local/etc/pkg/repos/local.conf
+		sed -i '' 's/: no/: yes/' /usr/local/etc/pkg/repos/FreeBSD.conf
+	fi
 fi
 
-# REMOVE GIT-LITE
-if pkg info 'git-lite' | grep 'Version'; then
-  pkg remove -y git-lite
+# REPLACE GIT-LITE WITH GIT ON FREEBSD
+if [ `uname` = 'FreeBSD' ]; then
+	if pkg info 'git-lite' | grep 'Version'; then
+		pkg remove -y git-lite
+		pkg install -y git
+	fi
 fi
 
-# INSTALL GIT AND CLONE LATEST CONFIG
-pkg install -y git
+# INSTALL GIT ON DEBIAN
+if [ `uname` = 'Linux' ]; then
+	apt-get update
+	apt-get upgrade -y
+	apt-get install -y git
+fi
+
+# CLONE LATEST CONFIG
 git clone --depth=1 https://github.com/darkain/FreeBSD-Server.git .
 
 # INSTALL PACKAGES
@@ -43,12 +52,14 @@ ln -s /vince/root/.ssh/authorized_keys /root/.ssh/
 # ENABLE SSH
 rm /etc/ssh/sshd_config
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
-if [ `uname -i` != 'FREENAS64' ]; then
-  sysrc 'sshd_enable=YES'
-  service sshd restart
+if [ `uname` = 'Linux' ]; then
+	service ssh start
+elif [ `uname -i` != 'FREENAS64' ]; then
+	sysrc 'sshd_enable=YES'
+	service sshd restart
 elif [ `sysctl -n security.jail.jailed` = 1 ]; then
-  sysrc 'sshd_enable=YES'
-  service sshd restart
+	sysrc 'sshd_enable=YES'
+	service sshd restart
 fi
 
 # MOVE TO HOME DIRECTORY
