@@ -12,7 +12,12 @@
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"ensure_newline_at_eof_on_save": true,
-	"folder_exclude_patterns": [
+	"file_exclude_patterns":
+	[
+		"datadump.json"
+	],
+	"folder_exclude_patterns":
+	[
 		".git",
 		".svn",
 		".phan",
@@ -27,7 +32,8 @@
 		"_phpmailer",
 		"_project",
 		"_scss",
-		"tinymce",
+		"branches",
+		"tinymce"
 	],		
 	"font_face": "Source Code Pro",
 	"font_size": 12,
