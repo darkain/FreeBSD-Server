@@ -14,7 +14,8 @@
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
-		"datadump.json"
+		"datadump.json",
+		"*.pyc"
 	],
 	"folder_exclude_patterns":
 	[
@@ -22,6 +23,7 @@
 		".svn",
 		".phan",
 		".vscode",
+		"__pycache__",
 		"_bin",
 		"_log",
 		"_minify",
