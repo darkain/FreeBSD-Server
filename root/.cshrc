@@ -51,9 +51,9 @@ else
 	alias	l.			"ls -dlG .*"
 	alias	ls			"exa"
 	alias	la			"exa -aa"
-	alias	ll			"exa -aal"
-	alias	dir			"exa -aal"
-	alias	lsdir		"exa -aal --color=always | grep '\[1;34md' --color=never"
+	alias	ll			"exa -aalg"
+	alias	dir			"exa -aalg"
+	alias	lsdir		"exa -aalg --color=always | grep '\[1;34md' --color=never"
 endif
 
 
