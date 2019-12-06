@@ -25,8 +25,8 @@ if [ "$(uname)" = 'FreeBSD' ]; then
 	# REPLACE GIT-LITE WITH GIT ON FREEBSD
 	if pkg info 'git-lite' | grep 'Version'; then
 		pkg remove -y git-lite
-		pkg install -y git
 	fi
+	pkg install -y git
 fi
 
 # INSTALL GIT ON DEBIAN
