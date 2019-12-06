@@ -13,8 +13,16 @@ if [ `uname -i` = 'FREENAS64' ]; then
 	fi
 fi
 
-# REPLACE GIT-LITE WITH GIT ON FREEBSD
-if [ `uname` = 'FreeBSD' ]; then
+# FREEBSD SPECIFIC CONFIGURATION
+if [ "$(uname)" = 'FreeBSD' ]; then
+
+	# BOOTSTRAP PKG IF NOT ALREADY DONE
+	if pkg -N 2>/dev/null; then
+	else
+		env ASSUME_ALWAYS_YES=YES pkg bootstrap
+	fi
+
+	# REPLACE GIT-LITE WITH GIT ON FREEBSD
 	if pkg info 'git-lite' | grep 'Version'; then
 		pkg remove -y git-lite
 		pkg install -y git
