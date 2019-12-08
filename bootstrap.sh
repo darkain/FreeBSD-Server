@@ -18,6 +18,7 @@ if [ "$(uname)" = 'FreeBSD' ]; then
 
 	# BOOTSTRAP PKG IF NOT ALREADY DONE
 	if pkg -N 2>/dev/null; then
+		cd .
 	else
 		env ASSUME_ALWAYS_YES=YES pkg bootstrap
 	fi
