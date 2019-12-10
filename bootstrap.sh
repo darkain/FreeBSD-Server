@@ -77,10 +77,10 @@ ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 if [ `uname` = 'Linux' ]; then
 	if [ "`systemctl | grep sshd.service`" != '' ]; then
 		systemctl enable sshd
-		systemctl sshd restart
+		systemctl restart sshd
 	elif [ "`systemctl | grep ssh.service`" != '' ]; then
 		systemctl enable ssh
-		systemctl ssh restart
+		systemctl restart ssh
 	fi
 elif [ `uname -i` != 'FREENAS64' ]; then
 	sysrc 'sshd_enable=YES'
