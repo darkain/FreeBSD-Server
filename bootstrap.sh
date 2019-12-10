@@ -63,9 +63,9 @@ rm /etc/ssh/sshd_config
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 if [ `uname` = 'Linux' ]; then
 	if [ "`systemctl | grep sshd.service`" != '' ]; then
-		service sshd start
+		service sshd restart
 	elif [ "`systemctl | grep ssh.service`" != '' ]; then
-		service ssh start
+		service ssh restart
 	fi
 elif [ `uname -i` != 'FREENAS64' ]; then
 	sysrc 'sshd_enable=YES'
