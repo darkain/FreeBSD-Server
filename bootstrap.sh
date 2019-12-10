@@ -57,6 +57,7 @@ sh firstrun
 
 # REMOVE DEFAULT FILES
 rm /root/.cshrc
+rm /root/.tcshrc
 rm /root/.nanorc
 rm /root/.my.cnf
 rm /root/.login
