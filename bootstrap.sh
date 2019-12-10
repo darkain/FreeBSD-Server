@@ -5,7 +5,8 @@ mkdir -p /root/.ssh
 mkdir -p /vince
 cd /vince
 
-# RECONFIGURE PKG
+
+# RECONFIGURE PKG ON FREENAS
 if [ `uname -i` = 'FREENAS64' ]; then
 	if [ `sysctl -n security.jail.jailed` = 0 ]; then
 		sed -i '' 's/: yes/: no/' /usr/local/etc/pkg/repos/local.conf
@@ -13,8 +14,20 @@ if [ `uname -i` = 'FREENAS64' ]; then
 	fi
 fi
 
-# FREEBSD SPECIFIC CONFIGURATION
-if [ "$(uname)" = 'FreeBSD' ]; then
+
+# INSTALL GIT ON REDHAT
+if [ `which yum 2>/dev/null` ]; then
+	yum update -y
+	yum install -y git
+
+# INSTALL GIT ON DEBIAN
+elif [ `which apt 2>/dev/null` ]; then
+	apt-get update
+	apt-get upgrade -y
+	apt-get install -y git
+
+# INSTALL GIT ON FREEBSD
+elif [ `which pkg 2>/dev/null` ]; then
 
 	# BOOTSTRAP PKG IF NOT ALREADY DONE
 	if pkg -N 2>/dev/null; then
@@ -28,14 +41,13 @@ if [ "$(uname)" = 'FreeBSD' ]; then
 		pkg remove -y git-lite
 	fi
 	pkg install -y git
+	
+# ERROR, CANNOT CONTINUE
+else
+	echo "Unknown package manager" 1>&2
+	exit 1
 fi
 
-# INSTALL GIT ON DEBIAN
-if [ `uname` = 'Linux' ]; then
-	apt-get update
-	apt-get upgrade -y
-	apt-get install -y git
-fi
 
 # CLONE LATEST CONFIG
 git clone --depth=1 https://github.com/darkain/FreeBSD-Server.git .
