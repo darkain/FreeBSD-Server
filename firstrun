@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ `uname` = 'FreeBSD' ]; then
-	pkg install -y exa freecolor nano screen ipcalc tmux grc git htop mtr-nox11 hs-ShellCheck
+	pkg install -y exa freecolor nano screen ipcalc wget tmux grc git htop mtr-nox11 hs-ShellCheck
 fi
 
 if [ `uname` = 'Linux' ]; then
