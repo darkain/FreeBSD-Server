@@ -1,9 +1,19 @@
 #!/bin/sh
 
-if [ `uname` = 'FreeBSD' ]; then
-	pkg install -y exa freecolor nano screen ipcalc wget tmux grc git htop mtr-nox11 hs-ShellCheck
-fi
+if [ `which yum 2>/dev/null` ]; then
+	yum install -y epel-release
+	yum update -y
+	yum install -y tcsh freecolor nano screen ipcalc wget tmux git htop mtr
+	# TODO: add "grc", "exa", "spellcheck"
 
-if [ `uname` = 'Linux' ]; then
-	apt-get install -y tcsh nano screen ipcalc tmux grc git htop mtr-tiny 
+elif [ `which apt 2>/dev/null` ]; then
+	apt install -y tcsh nano screen ipcalc wget tmux grc git htop mtr-tiny
+	# TODO: add "freecolor", "exa", "spellcheck"
+
+elif [ `which pkg 2>/dev/null` ]; then
+	pkg install -y exa freecolor nano screen ipcalc wget tmux grc git htop mtr-nox11 hs-ShellCheck
+
+else
+	echo "Unknown package manager" 1>&2
+	exit 1
 fi
