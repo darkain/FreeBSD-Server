@@ -26,14 +26,10 @@ else
 endif
 
 
-# directory traversal aliases
-alias	~			"cd ~"
+# directory traversal aliases (because i make typos)
 alias	cd~			"cd ~"
-alias	/			"cd /"
 alias	cd/			"cd /"
-alias	.			"cd ."
 alias	cd.			"cd ."
-alias	..			"cd .."
 alias	cd..		"cd .."
 
 
@@ -87,6 +83,9 @@ endif
 
 # A righteous umask
 umask 22
+
+# AUTOMATICALLY CD INTO FOLDERS
+set implicitcd
 
 set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
 
