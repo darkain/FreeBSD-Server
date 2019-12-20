@@ -1,46 +1,46 @@
 # misc aliases
-alias   clr         "clear"
-alias   cls         "clear"
-alias   h           "history 25"
-alias   j           "jobs -l"
-alias   ipconfig    "ifconfig"
-alias   psx         "ps aux"
-alias   zt          "zerotier-cli"
-alias   ansible     "ansible-3.6"
-alias   quit        "exit"
+alias		clr			"clear"
+alias		cls			"clear"
+alias		h			"history 25"
+alias		j			"jobs -l"
+alias		ipconfig	"ifconfig"
+alias		psx			"ps aux"
+alias		zt			"zerotier-cli"
+alias		ansible		"ansible-3.6"
+alias		quit		"exit"
 
 
 # FreeBSD only aliases
 if (`uname` == 'FreeBSD') then
-    alias   time    "/usr/bin/time -p"
-    alias   free    "freecolor -o"
-    alias   myip    "fetch -qo - http://icanhazip.com"
-    alias   myip4   "fetch -4qo - http://icanhazip.com"
-    alias   myip6   "fetch -6qo - http://icanhazip.com"
+	alias	time		"/usr/bin/time -p"
+	alias	free		"freecolor -o"
+	alias	myip		"fetch -qo - http://icanhazip.com"
+	alias	myip4		"fetch -4qo - http://icanhazip.com"
+	alias	myip6		"fetch -6qo - http://icanhazip.com"
 
 # Linux only aliases
 else
-    alias   myip    "wget -qO - http://icanhazip.com"
-    alias   myip4   "wget -4qO - http://icanhazip.com"
-    alias   myip6   "wget -6qO - http://icanhazip.com"
+	alias	myip		"wget -qO - http://icanhazip.com"
+	alias	myip4		"wget -4qO - http://icanhazip.com"
+	alias	myip6		"wget -6qO - http://icanhazip.com"
 endif
 
 
 # directory traversal aliases (because i make typos)
-alias	cd~			"cd ~"
-alias	cd/			"cd /"
-alias	cd.			"cd ."
-alias	cd..		"cd .."
+alias		cd~			"cd ~"
+alias		cd/			"cd /"
+alias		cd.			"cd ."
+alias		cd..		"cd .."
 
 
 # directory listing aliases (without exa)
 if (`whereis -b exa` == 'exa:') then
-	alias	l.		"ls -dlG .*"
-	alias	la		ls -aF
-	alias	lf		ls -FA
-	alias	ll		ls -lAF
-	alias	dir		ls -lAF
-	alias	lsdir	"ls -lAF | grep '\[1;34md' --color=never"
+	alias	l.			"ls -dlG .*"
+	alias	la			ls -aF
+	alias	lf			ls -FA
+	alias	ll			ls -lAF
+	alias	dir			ls -lAF
+	alias	lsdir		"ls -lAF | grep '\[1;34md' --color=never"
 
 # directory listing aliases (with exa)
 else
@@ -54,20 +54,20 @@ endif
 
 
 # grep aliases
-alias	grep		"grep --color=auto"
-alias	egrep		"egrep --color=auto"
-alias	fgrep		"fgrep --color=auto"
-alias	zgrep		"zgrep --color=auto"
-alias	zegrep		"zegrep --color=auto"
-alias	zfgrep		"zfgrep --color=auto"
+alias		grep		"grep --color=auto"
+alias		egrep		"egrep --color=auto"
+alias		fgrep		"fgrep --color=auto"
+alias		zgrep		"zgrep --color=auto"
+alias		zegrep		"zegrep --color=auto"
+alias		zfgrep		"zfgrep --color=auto"
 
 
 # FreeBSD package manager aliases
 if (`uname` == 'FreeBSD') then
-	alias	inst	"pkg install -y"
-	alias	upgr	"pkg upgrade -y"
-	alias	updt	"pkg update"
-	alias	srch	"pkg search \!:1 | grep \!:1"
+	alias	inst		"pkg install -y"
+	alias	upgr		"pkg upgrade -y"
+	alias	updt		"pkg update"
+	alias	srch		"pkg search \!:1 | grep \!:1"
 endif
 
 
