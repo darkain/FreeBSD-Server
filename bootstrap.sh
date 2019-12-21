@@ -60,6 +60,7 @@ rm /root/.cshrc
 rm /root/.tcshrc
 rm /root/.nanorc
 rm /root/.my.cnf
+rm /root/.grcat
 rm /root/.login
 rm /root/.ssh/authorized_keys
 
@@ -68,6 +69,7 @@ rm /root/.ssh/authorized_keys
 ln -s /vince/root/.cshrc /root/
 ln -s /vince/root/.nanorc /root/
 ln -s /vince/root/.my.cnf /root/
+ln -s /vince/root/.grcat /root/
 ln -s /vince/root/.login /root/
 ln -s /vince/root/.ssh/authorized_keys /root/.ssh/
 
