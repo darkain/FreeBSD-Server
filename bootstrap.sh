@@ -101,4 +101,4 @@ fi
 cd ~
 
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
-csh
+source .cshrc; source .login
