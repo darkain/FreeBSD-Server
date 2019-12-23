@@ -28,7 +28,7 @@ elif [ `which apt 2>/dev/null` ]; then
 
 # INSTALL GIT ON FREEBSD
 elif [ `which pkg 2>/dev/null` ]; then
-	
+
 	# USE LATEST REPOSITORY (X86-64 ONLY, BECAUSE THIS IS BROKEN ON ARM)
 	if [ `uname -m` = 'amd64' ]; then
 		sed -i '' 's/quarterly"/latest"/' /etc/pkg/FreeBSD.conf
@@ -46,7 +46,7 @@ elif [ `which pkg 2>/dev/null` ]; then
 		pkg remove -y git-lite
 	fi
 	pkg install -y git
-	
+
 # ERROR, CANNOT CONTINUE
 else
 	echo "Unknown package manager" 1>&2
@@ -55,7 +55,12 @@ fi
 
 
 # CLONE LATEST CONFIG
-git clone --depth=1 https://github.com/darkain/FreeBSD-Server.git .
+if [ ! -d "/vince/.git" ]; then
+	git clone --depth=1 https://github.com/darkain/FreeBSD-Server.git .
+else
+	git pull
+fi
+
 
 # INSTALL PACKAGES
 sh firstrun
