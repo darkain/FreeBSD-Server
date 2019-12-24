@@ -7,6 +7,7 @@ alias		ipconfig	"ifconfig"
 alias		psx			"ps aux"
 alias		zt			"zerotier-cli"
 alias		ansible		"ansible-3.6"
+alias		ssh			"ssh -A"
 alias		quit		"exit"
 
 
