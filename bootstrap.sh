@@ -96,10 +96,12 @@ if [ `uname` = 'Linux' ]; then
 	fi
 elif [ `uname -i` != 'FREENAS64' ]; then
 	sysrc 'sshd_enable=YES'
-	service sshd restart
+	service sshd stop
+	service sshd start
 elif [ `sysctl -n security.jail.jailed` = 1 ]; then
 	sysrc 'sshd_enable=YES'
-	service sshd restart
+	service sshd stop
+	service sshd start
 fi
 
 # MOVE TO HOME DIRECTORY
