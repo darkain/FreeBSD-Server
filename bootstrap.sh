@@ -104,8 +104,5 @@ elif [ `sysctl -n security.jail.jailed` = 1 ]; then
 	service sshd start
 fi
 
-# MOVE TO HOME DIRECTORY
-cd ~
-
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
-source .cshrc; source .login
+source ~/.cshrc; source ~/.login
