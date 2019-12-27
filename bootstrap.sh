@@ -72,13 +72,13 @@ fi
 sh firstrun
 
 # REMOVE DEFAULT FILES
-! rm /root/.cshrc
-! rm /root/.tcshrc
-! rm /root/.nanorc
-! rm /root/.my.cnf
-! rm /root/.grcat
-! rm /root/.login
-! rm /root/.ssh/authorized_keys
+! rm /root/.cshrc 2>/dev/null
+! rm /root/.tcshrc 2>/dev/null
+! rm /root/.nanorc 2>/dev/null
+! rm /root/.my.cnf 2>/dev/null
+! rm /root/.grcat 2>/dev/null
+! rm /root/.login 2>/dev/null
+! rm /root/.ssh/authorized_keys 2>/dev/null
 
 # LINK OUR COPY OF THE FILES FROM THE GIT REPO
 # WE CAN THEN UPDATE THESE FILES ANY TIME WITH A 'git pull'
@@ -90,7 +90,7 @@ ln -s /vince/root/.login /root/
 ln -s /vince/root/.ssh/authorized_keys /root/.ssh/
 
 # ENABLE SSH
-! rm /etc/ssh/sshd_config
+! rm /etc/ssh/sshd_config 2>/dev/null
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 if [ `uname` = 'Linux' ]; then
 	if [ "`systemctl | grep sshd.service`" != '' ]; then
