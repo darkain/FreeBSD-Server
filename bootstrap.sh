@@ -15,6 +15,12 @@ if [ `uname -i` = 'FREENAS64' ]; then
 fi
 
 
+# RECONFIGURE PKG ON OPNSENSE
+if [ `which opnsense-version 2>/dev/null` ]; then
+	sed -i '' 's/: no/: yes/' /usr/local/etc/pkg/repos/FreeBSD.conf
+fi
+
+
 # INSTALL GIT ON REDHAT
 if [ `which yum 2>/dev/null` ]; then
 	yum update -y
