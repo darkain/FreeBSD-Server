@@ -101,9 +101,13 @@ if [ `uname` = 'Linux' ]; then
 		systemctl restart ssh
 	fi
 elif [ `uname -i` != 'FREENAS64' ]; then
-	sysrc 'sshd_enable=YES'
-	service sshd stop
-	service sshd start
+	if [ `which opnsense-version 2>/dev/null` ]; then
+		echo 'SSH handled by OPNsense UI'
+	else
+		sysrc 'sshd_enable=YES'
+		service sshd stop
+		service sshd start
+	fi
 elif [ `sysctl -n security.jail.jailed` = 1 ]; then
 	sysrc 'sshd_enable=YES'
 	service sshd stop
