@@ -1,3 +1,6 @@
+# set default tab width
+tabs -4
+
 # misc aliases
 alias		clr			"clear"
 alias		cls			"clear"
@@ -82,7 +85,7 @@ if (`uname` == 'FreeBSD') then
 endif
 
 
-# Generic colorizer aliases
+# generic colorizer aliases
 if (`whereis -b grcat` != 'grcat:') then
 	set cmds=( \
 		cc \
