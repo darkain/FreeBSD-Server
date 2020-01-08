@@ -91,12 +91,15 @@ if (`whereis -b grcat` != 'grcat:') then
 		df \
 		diff \
 		dig \
+		du \
+		env \
 		gcc \
 		gmake \
 		ifconfig \
 		last \
 		ldap \
-#		ls \
+		lsof \
+		lspci \
 		make \
 		mount \
 		mtr \
@@ -104,8 +107,11 @@ if (`whereis -b grcat` != 'grcat:') then
 		ping \
 		ping6 \
 		ps \
+		stat \
+		sysctl \
 		traceroute \
 		traceroute6 \
+		uptime \
 		wdiff \
 		whois \
 		iwconfig \
