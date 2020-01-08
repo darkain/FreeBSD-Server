@@ -96,7 +96,7 @@ if (`whereis -b grcat` != 'grcat:') then
 		ifconfig \
 		last \
 		ldap \
-		ls \
+#		ls \
 		make \
 		mount \
 		mtr \
