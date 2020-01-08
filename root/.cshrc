@@ -82,6 +82,44 @@ if (`uname` == 'FreeBSD') then
 endif
 
 
+# Generic colorizer aliases
+if (`whereis -b grcat` != 'grcat:') then
+	set cmds=( \
+		cc \
+		configure \
+		cvs \
+		df \
+		diff \
+		dig \
+		gcc \
+		gmake \
+		ifconfig \
+		last \
+		ldap \
+		ls \
+		make \
+		mount \
+		mtr \
+		netstat \
+		ping \
+		ping6 \
+		ps \
+		traceroute \
+		traceroute6 \
+		wdiff \
+		whois \
+		iwconfig \
+	)
+
+	foreach cmd ($cmds)
+		alias $cmd "grc --colour=auto $cmd"
+	end
+
+	unset cmd cmds
+endif
+
+
+
 # A righteous umask
 umask 22
 
