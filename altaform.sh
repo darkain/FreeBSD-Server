@@ -1,3 +1,3 @@
 #!/bin/sh
 
-pkg install -y lighttpd php73 php73-curl php73-exif php73-sodium php73-zip php73-zlib php73-mysqli php73-pecl-imagick php73-pecl-redis php73-sysvmsg php73-sysvsem php73-sysvshm php73-sockets php73-simplexml php73-extensions php73-soap php73-openssl
+pkg install -y lighttpd php74 php74-curl php74-exif php74-sodium php74-zip php74-zlib php74-mysqli php74-pecl-imagick php74-pecl-redis php74-sysvmsg php74-sysvsem php74-sysvshm php74-sockets php74-simplexml php74-extensions php74-soap php74-openssl
