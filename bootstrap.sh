@@ -35,9 +35,6 @@ elif [ `which apt 2>/dev/null` ]; then
 # INSTALL GIT ON FREEBSD
 elif [ `which pkg 2>/dev/null` ]; then
 
-	# FORCE HTTPS INSTEAD OF HTTP
-	sed -i '' 's/http:/https:/' /etc/pkg/FreeBSD.conf
-
 	# USE LATEST REPOSITORY (X86-64 ONLY, BECAUSE THIS IS BROKEN ON ARM)
 	if [ `uname -m` = 'amd64' ]; then
 		sed -i '' 's/quarterly"/latest"/' /etc/pkg/FreeBSD.conf
@@ -54,7 +51,10 @@ elif [ `which pkg 2>/dev/null` ]; then
 	if `pkg info git-lite >/dev/null 2>&1`; then
 		pkg remove -y git-lite
 	fi
-	pkg install -y git
+	pkg install -y git ca_root_nss
+
+	# FORCE HTTPS INSTEAD OF HTTP
+	sed -i '' 's/http:/https:/' /etc/pkg/FreeBSD.conf
 
 # ERROR, CANNOT CONTINUE
 else
