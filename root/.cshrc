@@ -153,7 +153,7 @@ if ($?prompt) then
 			set TITLE = "%{\033]0;%m:%~\007%}"
 	endsw
 
-	set prompt = "${TITLE}%{\e[34m%}%n%{\e[0m%}@%{\e[32m%}%m%{\e[0m%} %{\e[1;33m%}%~%{\e[0m%}# "
+	set prompt = "${TITLE}%{\e[34m%}%n%{\e[0m%}@%{\e[32m%}%M%{\e[0m%} %{\e[1;33m%}%~%{\e[0m%}# "
 	set promptchars = "%#"
 
 	unset TITLE
