@@ -82,6 +82,7 @@ if (`uname` == 'FreeBSD') then
 	alias	apt-cache	"pkg"
 	alias	dpkg		"pkg"
 	alias	yum			"pkg"
+	alias	dnf			"pkg"
 endif
 
 
