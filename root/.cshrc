@@ -151,7 +151,7 @@ if ($?prompt) then
 		case "rxvt":
 		case "screen*":
 		case "xterm*":
-			set TITLE = "%{\033]0;%m:%~\007%}"
+			set TITLE = "%{\033]0;%M:%~\007%}"
 	endsw
 
 	set prompt = "${TITLE}%{\e[34m%}%n%{\e[0m%}@%{\e[32m%}%M%{\e[0m%} %{\e[1;33m%}%~%{\e[0m%}# "
