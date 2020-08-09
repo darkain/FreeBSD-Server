@@ -75,7 +75,7 @@ if (`uname` == 'FreeBSD') then
 endif
 
 
-# Linux package aliases
+# Linux and Unix package aliases
 if (`uname` == 'FreeBSD') then
 	alias	apt			"pkg"
 	alias	apt-get		"pkg"
@@ -83,6 +83,7 @@ if (`uname` == 'FreeBSD') then
 	alias	dpkg		"pkg"
 	alias	yum			"pkg"
 	alias	dnf			"pkg"
+	alias	pkgin		"pkg"
 endif
 
 
