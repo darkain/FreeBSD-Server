@@ -11,7 +11,6 @@ elif [ `which apt 2>/dev/null` ]; then
 	# TODO: add "freecolor", "exa", "shellcheck", bind tools, pwgen
 
 elif [ `which pkg 2>/dev/null` ]; then
-	exit 0
 	pkg install -y exa freecolor nano screen ipcalc wget tmux grc htop mtr-nox11 hs-ShellCheck pwgen bsdinfo
 	# TODO: bind-tools  <<< this currently breaks TrueNAS
 	
