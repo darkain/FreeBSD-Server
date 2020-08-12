@@ -49,9 +49,10 @@ elif [ `which pkg 2>/dev/null` ]; then
 
 	# REPLACE GIT-LITE WITH GIT ON FREEBSD
 	if `pkg info git-lite >/dev/null 2>&1`; then
-		pkg delete -f -y git-lite
+		pkg install -y ca_root_nss
+	else
+		pkg install -y git ca_root_nss
 	fi
-	pkg install -y git ca_root_nss
 
 	# FORCE HTTPS INSTEAD OF HTTP
 	sed -i '' 's/http:/https:/' /etc/pkg/FreeBSD.conf
