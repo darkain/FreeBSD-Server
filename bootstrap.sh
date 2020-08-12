@@ -7,7 +7,7 @@ cd /vince
 
 
 # RECONFIGURE PKG ON FREENAS
-if [ `uname -i` = 'FREENAS64' ]; then
+if [ `uname -i` = 'FREENAS64' -o `uname -i` = 'TRUENAS' ]; then
 	if [ `sysctl -n security.jail.jailed` = 0 ]; then
 		sed -i '' 's/: yes/: no/' /usr/local/etc/pkg/repos/local.conf
 		sed -i '' 's/: no/: yes/' /usr/local/etc/pkg/repos/FreeBSD.conf
@@ -103,7 +103,7 @@ if [ `uname` = 'Linux' ]; then
 		systemctl enable ssh
 		systemctl restart ssh
 	fi
-elif [ `uname -i` != 'FREENAS64' ]; then
+elif [ `uname -i` != 'FREENAS64' -a `uname -i` != 'TRUENAS' ]; then
 	if [ `which opnsense-version 2>/dev/null` ]; then
 		echo 'SSH handled by OPNsense UI'
 	else
