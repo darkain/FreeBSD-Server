@@ -67,6 +67,8 @@ fi
 # CLONE LATEST CONFIG
 if [ ! -d "/vince/.git" ]; then
 	git clone --depth=1 https://github.com/darkain/FreeBSD-Server.git .
+	git pull origin TrueNAS
+	git checkout TrueNAS
 else
 	git pull
 fi
