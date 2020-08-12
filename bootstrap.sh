@@ -49,7 +49,7 @@ elif [ `which pkg 2>/dev/null` ]; then
 
 	# REPLACE GIT-LITE WITH GIT ON FREEBSD
 	if `pkg info git-lite >/dev/null 2>&1`; then
-		pkg remove -y git-lite
+		pkg delete -f -y git-lite
 	fi
 	pkg install -y git ca_root_nss
 
