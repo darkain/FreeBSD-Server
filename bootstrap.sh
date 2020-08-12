@@ -73,7 +73,7 @@ fi
 
 
 # INSTALL PACKAGES
-# sh firstrun
+sh firstrun
 
 # REMOVE DEFAULT FILES
 ! rm /root/.cshrc 2>/dev/null
