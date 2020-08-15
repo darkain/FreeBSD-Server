@@ -1,0 +1,17 @@
+# ZFS File System
+zfs_enable="YES"
+
+# Power Management
+powerd_enable="YES"
+powerd_flags="-p 50"
+
+# Network Time
+ntpdate_enable="YES"
+ntpdate_hosts="0.freebsd.pool.ntp.org 1.freebsd.pool.ntp.org 2.freebsd.pool.ntp.org"
+
+# VPN / SD-WAN networking
+zerotier_enable="YES"
+
+# Web Interface
+php_fpm_enable="YES"
+nginx_enable="YES"
