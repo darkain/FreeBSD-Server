@@ -10,6 +10,8 @@ alias		ipconfig	"ifconfig"
 alias		psx			"ps aux"
 alias		zt			"zerotier-cli"
 alias		ansible		"ansible-3.6"
+alias		timestamp	"date +%s"
+alias		unixtime	"date +%s"
 alias		ssh			"ssh -A"
 alias		quit		"exit"
 
