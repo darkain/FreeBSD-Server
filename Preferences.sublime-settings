@@ -6,7 +6,12 @@
 		"Cosplay",
 		"cosplay",
 		"Darkain",
-		"darkain"
+		"darkain",
+		"homebrew",
+		"indie",
+		"inline",
+		"internet",
+		"online"
 	],
 	"color_scheme": "Packages/Colorsublime-Themes/Darkain-Mariana.tmTheme",
 	"default_line_ending": "unix",
@@ -14,35 +19,34 @@
 	"ensure_newline_at_eof_on_save": true,
 	"file_exclude_patterns":
 	[
-		"datadump.json",
-		"*.pyc"
+		"*.pyc",
+		"datadump.json"
 	],
 	"folder_exclude_patterns":
 	[
 		".git",
-		".svn",
 		".phan",
+		".svn",
+		".vs",
 		".vscode",
 		"__pycache__",
 		"_bin",
+		"_datatables",
 		"_log",
 		"_minify",
 		"_parsedown",
 		"_pathconvert",
-		"_datatables",
 		"_phan",
 		"_phpmailer",
 		"_project",
 		"_scss",
 		"branches",
+		"Debug",
+		"Release",
 		"tinymce"
-	],		
-	"font_face": "Source Code Pro",
-	"font_size": 12,
-	"ignored_packages":
-	[
-		"Vintage"
 	],
+	"font_face": "Source Code Pro",
+	"font_size": 16,
 	"tab_completion": false,
 	"tab_size": 4,
 	"theme": "Adaptive.sublime-theme",
