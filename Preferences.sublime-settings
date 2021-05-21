@@ -13,6 +13,7 @@
 		"internet",
 		"online"
 	],
+	"caret_style": "smooth",
 	"color_scheme": "Packages/Colorsublime-Themes/Darkain-Mariana.tmTheme",
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
@@ -43,12 +44,19 @@
 		"branches",
 		"Debug",
 		"Release",
-		"tinymce"
+		"tinymce",
+		"x64"
 	],
 	"font_face": "Source Code Pro",
 	"font_size": 16,
+	"hardware_acceleration": "opengl",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
 	"tab_completion": false,
 	"tab_size": 4,
 	"theme": "Adaptive.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"themed_title_bar": false,
+	"trim_trailing_white_space_on_save": true,
 }
