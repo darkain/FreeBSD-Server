@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pkg install -y mariadb104-server mariadb104-client galera rsync stunnel grc bash
+pkg install -y mariadb105-server mariadb105-client galera26 rsync stunnel grc bash
 
 LINE='mysql_enable="YES"'
 FILE='/etc/rc.conf.local'
