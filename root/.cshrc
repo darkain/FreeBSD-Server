@@ -14,6 +14,7 @@ alias		timestamp	"date +%s"
 alias		unixtime	"date +%s"
 alias		ssh			"ssh -A"
 alias		quit		"exit"
+alias		innotop		"innotop -m Q"
 
 
 # FreeBSD only aliases
