@@ -140,7 +140,7 @@ umask 22
 # AUTOMATICALLY CD INTO FOLDERS
 set implicitcd
 
-set path = (/sbin /bin /usr/sbin /usr/bin /usr/local/sbin /usr/local/bin $HOME/bin)
+set path = ($HOME/bin /usr/local/sbin /usr/local/bin /sbin /bin /usr/sbin /usr/bin)
 
 setenv	EDITOR		nano
 setenv	PAGER		less
