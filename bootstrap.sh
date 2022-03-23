@@ -35,8 +35,8 @@ elif [ `which apt 2>/dev/null` ]; then
 # INSTALL GIT ON FREEBSD
 elif [ `which pkg 2>/dev/null` ]; then
 
-	# USE LATEST REPOSITORY (X86-64 ONLY, BECAUSE THIS IS BROKEN ON ARM)
-	if [ `uname -m` = 'amd64' ]; then
+	# USE LATEST REPOSITORY
+	if [ `uname -m` = 'amd64' -o `uname -m` = 'arm64' ]; then
 		sed -i '' 's/quarterly"/latest"/' /etc/pkg/FreeBSD.conf
 	fi
 
