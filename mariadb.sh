@@ -1,6 +1,12 @@
 #!/bin/sh
 
+mkdir /mysql
+ln -s /mysql /var/db/mysql
+
 pkg install -y mariadb105-server mariadb105-client galera26 rsync stunnel grc bash
+
+chown -R mysql:mysql /mysql
+chown mysql:mysql /var/db/mysql
 
 LINE='mysql_enable="YES"'
 FILE='/etc/rc.conf.local'
