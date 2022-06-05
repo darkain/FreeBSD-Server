@@ -50,3 +50,18 @@ rm /usr/local/etc/lighttpd/lighttpd.conf
 ln -s /vince/usr/local/etc/lighttpd/lighttpd.conf /usr/local/etc/lighttpd/
 sysrc lighttpd_enable="YES"
 service lighttpd start
+
+
+# CREATE FOLDER TO HOLD SSH KEY PAIR
+mkdir /home
+mkdir /home/www
+mkdir /home/www/.ssh
+
+# CREATE SSH KEY PAIR FOR WEB APP
+echo 'Please enter email address for new SSH key (eg: git/github/gitlab account)'
+read email
+ssh-keygen -t ed25519 -C $email -N '' -f /home/www/.ssh/id_ed25519
+
+# CHANGE OWNER OF NEW DIRECTORY, AND SET IT AS HOME DIERCTORY
+chown -R www:www /home/www
+# TODO: UPDATE HOME DIRECTORY PROGRAMMATICALLY
