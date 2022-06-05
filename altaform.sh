@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# INSTALL ALL OF OUR PACKAGES
 pkg install -y \
 lighttpd \
 php81 \
@@ -31,3 +32,19 @@ php81-zlib
 # php74-sysvmsg \
 # php74-sysvsem \
 # php74-sysvshm \
+
+
+# LISTEN ON ALL INTERFACES, NOT JUST LOCALHOST
+sed -i '' 's/listen = 127.0.0.1:9000/listen = 9000/' /usr/local/etc/php-fpm.d/www.conf
+
+
+# CREATE PATH FOR OUR WEB APP
+mkdir /var/www
+chown www:www /var/www
+
+
+# CONFIGURE LIGHTTPD
+rm /usr/local/etc/lighttpd/lighttpd.conf
+ln -s /vince/usr/local/etc/lighttpd/lighttpd.conf /usr/local/etc/lighttpd/
+sysrc lighttpd_enable="YES"
+service lighttpd start
