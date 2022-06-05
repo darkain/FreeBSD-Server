@@ -64,4 +64,4 @@ ssh-keygen -t ed25519 -C $email -N '' -f /home/www/.ssh/id_ed25519
 
 # CHANGE OWNER OF NEW DIRECTORY, AND SET IT AS HOME DIERCTORY
 chown -R www:www /home/www
-# TODO: UPDATE HOME DIRECTORY PROGRAMMATICALLY
+pw usermod -n www -d /home/www
