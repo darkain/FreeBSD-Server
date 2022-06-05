@@ -34,8 +34,10 @@ php81-zlib
 # php74-sysvshm \
 
 
-# LISTEN ON ALL INTERFACES, NOT JUST LOCALHOST
+# LISTEN ON ALL INTERFACES, NOT JUST LOCALHOST, AND START PHP-FPM INSTANCE
 sed -i '' 's/listen = 127.0.0.1:9000/listen = 9000/' /usr/local/etc/php-fpm.d/www.conf
+sysrc php_fpm_enable="YES"
+service php-fpm start
 
 
 # CREATE PATH FOR OUR WEB APP
