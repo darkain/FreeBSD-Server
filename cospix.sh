@@ -9,6 +9,9 @@ cd /var/www
 # GET THE INITIAL SOURCE CODE
 git clone --branch=live git@github.com:darkain/cospix.net.git .
 
+# ENSURE THE CDN IS SETUP
+mkdir files
+
 # FIX GIT'S STUPID BS
 git config --global --add safe.directory /var/www
 
