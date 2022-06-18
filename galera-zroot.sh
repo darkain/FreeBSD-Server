@@ -1,11 +1,11 @@
 #!/bin/sh
 
 zfs create \
-mountpoint=/mysql \
-recordsize=16k \
-compression=zstd \
-atime=off \
-sync=disabled \
-primarycache=metadata \
-secondarycache=metadata \
+-o mountpoint=/mysql \
+-o recordsize=16k \
+-o compression=zstd \
+-o atime=off \
+-o sync=disabled \
+-o primarycache=metadata \
+-o secondarycache=metadata \
 zroot/mysql
