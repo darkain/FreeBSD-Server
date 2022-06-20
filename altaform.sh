@@ -34,6 +34,12 @@ php81-zlib
 # php74-sysvshm \
 
 
+# SETUP PHP.INI
+cp /usr/local/etc/php.ini-production /usr/local/etc/php.ini
+sed -i '' 's/post_max_size = 8M/post_max_size = 50M/' /usr/local/etc/php.ini
+sed -i '' 's/upload_max_filesize = 2M/upload_max_filesize = 50M/' /usr/local/etc/php.ini
+
+
 # LISTEN ON ALL INTERFACES, NOT JUST LOCALHOST, AND START PHP-FPM INSTANCE
 sed -i '' 's/listen = 127.0.0.1:9000/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.d/www.conf
 sysrc php_fpm_enable="YES"
