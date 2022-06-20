@@ -82,7 +82,7 @@ sh firstrun
 ! rm /root/.my.cnf 2>/dev/null
 ! rm /root/.grcat 2>/dev/null
 ! rm /root/.login 2>/dev/null
-! rm /root/.ssh/authorized_keys_vince 2>/dev/null
+! rm /root/.ssh/authorized_keys2 2>/dev/null
 
 # LINK OUR COPY OF THE FILES FROM THE GIT REPO
 # WE CAN THEN UPDATE THESE FILES ANY TIME WITH A 'git pull'
@@ -91,7 +91,7 @@ ln -s /vince/root/.nanorc /root/
 ln -s /vince/root/.my.cnf /root/
 ln -s /vince/root/.grcat /root/
 ln -s /vince/root/.login /root/
-ln -s /vince/root/.ssh/authorized_keys_vince /root/.ssh/
+ln -s /vince/root/.ssh/authorized_keys2 /root/.ssh/
 
 # ENABLE SSH
 ! rm /etc/ssh/sshd_config 2>/dev/null
