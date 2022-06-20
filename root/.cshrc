@@ -14,6 +14,8 @@ alias		timestamp	"date +%s"
 alias		unixtime	"date +%s"
 alias		ssh			"ssh -A"
 alias		quit		"exit"
+alias		fullexit	"clear && exit"
+alias		fullquit	"clear && exit"
 alias		innotop		"innotop -m Q"
 
 
