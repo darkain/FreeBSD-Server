@@ -44,8 +44,6 @@ PermitRootLogin without-password
 # but this is overridden so installations will only check .ssh/authorized_keys
 AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
 
-PubkeyAcceptedAlgorithms +ssh-rsa
-
 #AuthorizedPrincipalsFile none
 
 #AuthorizedKeysCommand none
