@@ -12,3 +12,4 @@ if ( -x /usr/bin/resizewin ) /usr/bin/resizewin -z
 # if ( -x /usr/bin/fortune ) /usr/bin/fortune -s
 
 setenv IOCAGE_COLOR TRUE
+setenv UNAME_r `freebsd-version`
