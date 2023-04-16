@@ -4,7 +4,7 @@ mkdir /mysql
 ln -s /mysql /var/db/mysql
 
 # INSTALL THE PACKAGES
-pkg install -y mariadb105-server mariadb105-client galera26 rsync stunnel grc bash
+pkg install -y mariadb106-server mariadb106-client galera26 rsync stunnel grc bash
 
 # CLEAN UP PERMISSIONS
 chown -R mysql:mysql /mysql
