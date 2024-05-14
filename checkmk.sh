@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# For OPNsense, use this instead:
+# https://github.com/bashclub/checkmk-opnsense-agent
+
 # Install Checkmk Agent and some extra things for it to monitor 
 pkg install -y ipmitool libstatgrab check_mk_agent
 
