@@ -3,8 +3,14 @@
 # For OPNsense, use this instead:
 # https://github.com/bashclub/checkmk-opnsense-agent
 
-# Install Checkmk Agent and some extra things for it to monitor 
-pkg install -y ipmitool libstatgrab check_mk_agent
+# Install Checkmk Agent and some extra things for it to monitor
+if [ `uname -i` = 'FREENAS64' -o `uname -i` = 'TRUENAS' ]; then
+	# Do nothing on FreeNAS/TrueNAS
+elif [ `which opnsense-version 2>/dev/null` ]; then
+	# Do nothing on OPNsense
+else
+	pkg install -y ipmitool libstatgrab check_mk_agent
+fi
 
 # Register Checkmk TCP Port
 LINE='checkmk-agent 6556/tcp #Checkmk monitoring agent'
