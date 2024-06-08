@@ -119,4 +119,5 @@ elif [ `sysctl -n security.jail.jailed` = 1 ]; then
 fi
 
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
+chsh -s /bin/csh root
 exec tcsh
