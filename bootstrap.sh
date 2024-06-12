@@ -118,6 +118,15 @@ elif [ `sysctl -n security.jail.jailed` = 1 ]; then
 	service sshd start
 fi
 
+
+# ENABLE AUTO-TRIM ON ALL ZPOOLS
+if [ `which zpool 2>/dev/null` ]; then
+	zpool list -Ho name | while read line; do
+		zpool set autotrim=on $line
+	done
+fi
+ 
+
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
 chsh -s /bin/csh root
 exec tcsh
