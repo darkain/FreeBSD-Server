@@ -31,7 +31,7 @@ ln -s /usr/local/etc/check_mk /etc/check_mk
 ln -s /usr/local/lib/check_mk_agent /var/lib/check_mk_agent
 
 # Fetch my "fixed" check_mk_agent file
-fetch -o /usr/local/bin/check_mk_agent https://raw.githubusercontent.com/darkain/checkmk/master/agents/check_mk_agent.freebsd
+fetch -o /usr/local/bin/check_mk_agent https://raw.githubusercontent.com/darkain/checkmk/freebsd/agents/check_mk_agent.freebsd
 chmod +x /usr/local/bin/check_mk_agent
 
 
