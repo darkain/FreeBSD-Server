@@ -68,3 +68,7 @@ ssh-keygen -t ed25519 -C $email -N '' -f /home/www/.ssh/id_ed25519
 # CHANGE OWNER OF NEW DIRECTORY, AND SET IT AS HOME DIERCTORY
 chown -R www:www /home/www
 pw usermod -n www -d /home/www
+
+# MAKE IT POSSIBLE TO MANUALLY USE THE WWW USER
+ln -s /vince/root/.ssh/authorized_keys2 /root/.ssh/
+chsh -s /bin/sh www
