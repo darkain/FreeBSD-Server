@@ -3,36 +3,32 @@
 # INSTALL ALL OF OUR PACKAGES
 pkg install -y \
 lighttpd \
-php81 \
-php81-ctype \
-php81-curl \
-php81-exif \
-php81-extensions \
-php81-filter \
-php81-mysqli \
-php81-opcache \
-php81-pecl-imagick \
-php81-pecl-redis \
-php81-simplexml \
-php81-session \
-php81-soap \
-php81-sockets \
-php81-sodium \
-php81-sqlite3 \
-php81-tokenizer \
-php81-xml \
-php81-xmlreader \
-php81-xmlwriter \
-php81-zip \
-php81-zlib
-
-# THESE ARE OPTIONAL, CURRENTLY TURNING THEM OFF
-# USAGE OF THESE WILL MOST LIKELY BE REMOVED FROM PUDL
-# THEY ARE NOT USED ANYWHERE ELSE IN ALTAFORM OR OTHER DEPENDENCIES
-# php74-openssl \
-# php74-sysvmsg \
-# php74-sysvsem \
-# php74-sysvshm \
+php83 \
+php83-ctype \
+php83-curl \
+php83-exif \
+php83-extensions \
+php83-filter \
+php83-iconv \
+php83-mysqli \
+php83-opcache \
+php83-pdo_sqlite \
+php83-pecl-imagick \
+php83-pecl-redis \
+php83-phar \
+php83-posix \
+php83-session \
+php83-simplexml \
+php83-soap \
+php83-sockets \
+php83-sodium \
+php83-sqlite3 \
+php83-tokenizer \
+php83-xml \
+php83-xmlreader \
+php83-xmlwriter \
+php83-zip \
+php83-zlib
 
 
 # SETUP PHP.INI
