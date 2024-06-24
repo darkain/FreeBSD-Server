@@ -70,5 +70,5 @@ chown -R www:www /home/www
 pw usermod -n www -d /home/www
 
 # MAKE IT POSSIBLE TO MANUALLY USE THE WWW USER
-ln -s /vince/root/.ssh/authorized_keys2 /root/.ssh/
+ln -s /vince/root/.ssh/authorized_keys2 /home/www/.ssh/
 chsh -s /bin/sh www
