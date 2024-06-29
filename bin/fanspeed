@@ -1,6 +1,16 @@
 #!/bin/sh
+set -e
 
+if [ -z "$1" ]; then
+	>&2 echo 'ERROR: No fan speed specified'
+	exit
+fi
+
+# convert value to hex
 speed="$(printf "0x%02x" "$1")"
 
+# set fans to manual speed control
 ipmitool raw 0x30 0x30 0x01 0x00
+
+# set the fan speed to the provided value
 ipmitool raw 0x30 0x30 0x02 0xff "$speed"
