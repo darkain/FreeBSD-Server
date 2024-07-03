@@ -110,7 +110,6 @@ if (`whereis -b grcat` != 'grcat:') then
 		ldap \
 		lsof \
 		lspci \
-		make \
 		mount \
 		mtr \
 		netstat \
