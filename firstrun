@@ -4,14 +4,14 @@ if [ `which yum 2>/dev/null` ]; then
 	yum install -y epel-release
 	yum update -y
 	yum install -y tcsh freecolor nano screen ipcalc wget tmux git htop mtr
-	# TODO: add "grc", "exa", "spellcheck", bind tools, pwgen
+	# TODO: add "grc", "eza", "spellcheck", bind tools, pwgen
 
 elif [ `which apt 2>/dev/null` ]; then
 	apt install -y tcsh nano screen ipcalc wget tmux grc git htop mtr-tiny
-	# TODO: add "freecolor", "exa", "spellcheck", bind tools, pwgen
+	# TODO: add "freecolor", "eza", "spellcheck", bind tools, pwgen
 
 elif [ `which pkg 2>/dev/null` ]; then
-	pkg install -y exa freecolor nano screen ipcalc wget tmux grc htop mtr-nox11 hs-ShellCheck bind-tools pwgen bsdinfo ncdu
+	pkg install -y eza freecolor nano screen ipcalc wget tmux grc htop mtr-nox11 hs-ShellCheck bind-tools pwgen bsdinfo ncdu
 
 else
 	echo "Unknown package manager" 1>&2
