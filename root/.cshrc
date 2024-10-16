@@ -62,6 +62,12 @@ else
 endif
 
 
+# ncdu alias for modern ncdu2
+if (`whereis -b ncdu2` != 'ncdu2:') then
+	alias	ncdu		"ncdu2"
+endif
+
+
 # grep aliases
 alias		grep		"grep --color=auto"
 alias		egrep		"egrep --color=auto"
