@@ -42,23 +42,32 @@ alias		cd.			"cd ."
 alias		cd..		"cd .."
 
 
-# directory listing aliases (without eza)
-if (`whereis -b eza` == 'eza:') then
-	alias	l.			"ls -dlG .*"
-	alias	la			ls -aF
-	alias	lf			ls -FA
-	alias	ll			ls -lAF
-	alias	dir			ls -lAF
-	alias	lsdir		"ls -lAF | grep '\[1;34md' --color=never"
-
-# directory listing aliases (with eza)
-else
+# directory listing aliases with eza
+if (`whereis -b eza` != 'eza:') then
 	alias	l.			"ls -dlG .*"
 	alias	ls			"eza"
 	alias	la			"eza -aa"
 	alias	ll			"eza -aalg"
 	alias	dir			"eza -aalg"
 	alias	lsdir		"eza -aalg --color=always | grep '\[1;34md' --color=never"
+
+# directory listing aliases with exa
+else if (`whereis -b exa` != 'exa:') then
+	alias	l.			"ls -dlG .*"
+	alias	ls			"exa"
+	alias	la			"exa -aa"
+	alias	ll			"exa -aalg"
+	alias	dir			"exa -aalg"
+	alias	lsdir		"exa -aalg --color=always | grep '\[1;34md' --color=never"
+
+# directory listing aliases without eza or exa
+else
+	alias	l.			"ls -dlG .*"
+	alias	la			ls -aF
+	alias	lf			ls -FA
+	alias	ll			ls -lAF
+	alias	dir			ls -lAF
+	alias	lsdir		"ls -lAF | grep '\[1;34md' --color=never"
 endif
 
 
