@@ -11,7 +11,7 @@ elif [ `which apt 2>/dev/null` ]; then
 	# TODO: add "freecolor", "eza", "spellcheck", bind tools, pwgen
 
 elif [ `which pkg 2>/dev/null` ]; then
-	pkg install -y eza freecolor nano screen ipcalc wget tmux grc htop mtr-nox11 hs-ShellCheck bind-tools pwgen bsdinfo ncdu
+	pkg install -y eza freecolor nano screen ipcalc wget tmux grc htop mtr-nox11 hs-ShellCheck bind-tools pwgen bsdinfo ncdu2
 
 else
 	echo "Unknown package manager" 1>&2
