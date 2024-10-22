@@ -13,3 +13,4 @@ if ( -x /usr/bin/resizewin ) /usr/bin/resizewin -z
 
 setenv IOCAGE_COLOR TRUE
 setenv UNAME_r `freebsd-version`
+setenv IGNORE_OSVERSION yes
