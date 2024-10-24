@@ -1,9 +1,22 @@
 #!/bin/sh
 
+
+# INSTALL CRON JOB
+if [ "$1" = "install" ]; then
+	echo "INSTALLING!"
+	echo "@daily	root	/bin/sh /vince/autoupdate.sh delay" > /etc/cron.d/autoupdate
+	exit 0;
+fi
+
+
+
+
 # RANDOMIZE TIME OF DAY - DELAY UP TO 24 HOURS
-DELAY=`jot -r 1 0 86400`
-echo "Sleeping for ${DELAY} seconds..."
-sleep $DELAY
+if [ "$1" = "delay" ]; then
+	DELAY=`jot -r 1 0 86400`
+	echo "Sleeping for ${DELAY} seconds..."
+	sleep $DELAY
+fi
 
 
 
