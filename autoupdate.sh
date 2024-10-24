@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# RANDOMIZE DELAY - UP TO 1 HOUR
-DELAY=`jot -r 1 0 3600`
+# RANDOMIZE TIME OF DAY - DELAY UP TO 24 HOURS
+DELAY=`jot -r 1 0 86400`
 echo "Sleeping for ${DELAY} seconds..."
 sleep $DELAY
 
