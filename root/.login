@@ -14,3 +14,5 @@ if ( -x /usr/bin/resizewin ) /usr/bin/resizewin -z
 setenv IOCAGE_COLOR TRUE
 setenv UNAME_r `freebsd-version`
 setenv IGNORE_OSVERSION yes
+setenv PVSNESLIB_HOME /code/pvsneslib
+setenv ALLOW_UNSUPPORTED_SYSTEM 1
