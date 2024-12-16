@@ -1,3 +1,9 @@
+# early out for non-interactive shells (scp for example)
+if (`tty` == 'not a tty') then
+	exit 0
+endif
+
+
 # set default tab width
 tabs -4
 
