@@ -48,3 +48,11 @@ cp /etc/sysctl.conf.pkgsave /etc/sysctl.conf
 
 # CLEAN UP OLD FILES
 find / -name "*.pkgsave" | xargs rm -f
+
+
+
+
+# FIX ROOT SHELL
+! rm /root/.cshrc 2>/dev/null
+ln -s /vince/root/.cshrc /root/
+chsh -s /bin/csh root
