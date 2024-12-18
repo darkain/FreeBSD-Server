@@ -3,32 +3,32 @@
 # INSTALL ALL OF OUR PACKAGES
 pkg install -y \
 lighttpd \
-php83 \
-php83-ctype \
-php83-curl \
-php83-exif \
-php83-extensions \
-php83-filter \
-php83-iconv \
-php83-mysqli \
-php83-opcache \
-php83-pdo_sqlite \
-php83-pecl-imagick \
-php83-pecl-redis \
-php83-phar \
-php83-posix \
-php83-session \
-php83-simplexml \
-php83-soap \
-php83-sockets \
-php83-sodium \
-php83-sqlite3 \
-php83-tokenizer \
-php83-xml \
-php83-xmlreader \
-php83-xmlwriter \
-php83-zip \
-php83-zlib
+php84 \
+php84-ctype \
+php84-curl \
+php84-exif \
+php84-extensions \
+php84-filter \
+php84-iconv \
+php84-mysqli \
+php84-opcache \
+php84-pdo_sqlite \
+php84-pecl-imagick \
+php84-pecl-redis \
+php84-phar \
+php84-posix \
+php84-session \
+php84-simplexml \
+php84-soap \
+php84-sockets \
+php84-sodium \
+php84-sqlite3 \
+php84-tokenizer \
+php84-xml \
+php84-xmlreader \
+php84-xmlwriter \
+php84-zip \
+php84-zlib
 
 
 # SETUP PHP.INI
