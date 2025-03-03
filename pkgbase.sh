@@ -28,6 +28,7 @@ pkg update
 
 
 # INSTALL PKGBASE
+# AND FILTER OUT SOME PACKAGES
 pkg search -r FreeBSD-base BSD | \
 awk '!/-(dbg|man|dev|lib32|src|kernel)-/' | \
 sed 's/-[0-9][0-9]\.[0-9].*//' | \
@@ -42,6 +43,13 @@ cp /etc/group.pkgsave /etc/group
 cp /etc/master.passwd.pkgsave /etc/master.passwd
 cp /etc/shells.pkgsave /etc/shells
 cp /etc/sysctl.conf.pkgsave /etc/sysctl.conf
+
+
+
+
+# JUST SAVE/EXIT, NO NEED TO CHANGE ANYTHING
+# THIS IS NEEDED TO UNBREAK THE USER/PASSWORD DATABASE
+vipw
 
 
 
