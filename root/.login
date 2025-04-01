@@ -11,8 +11,11 @@ if ( -x /usr/bin/resizewin ) /usr/bin/resizewin -z
 # Uncomment to display a random cookie on each login.
 # if ( -x /usr/bin/fortune ) /usr/bin/fortune -s
 
+if ( -f /bin/freebsd-version ) then
+    setenv UNAME_r `freebsd-version`
+endif
+
 setenv IOCAGE_COLOR TRUE
-setenv UNAME_r `freebsd-version`
 setenv IGNORE_OSVERSION yes
 setenv PVSNESLIB_HOME /code/pvsneslib
 setenv ALLOW_UNSUPPORTED_SYSTEM 1
