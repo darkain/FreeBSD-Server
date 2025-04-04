@@ -125,7 +125,15 @@ if [ `which zpool 2>/dev/null` ]; then
 		zpool set autotrim=on $line
 	done
 fi
- 
+
+
+
+# SET BOOT DELAY TO 2 SECONDS INSTEAD OF DEFAULT OF 10
+if [ `which pkg 2>/dev/null` ]; then
+	echo 'autoboot_delay="2"' >> /boot/loader.conf
+fi
+
+
 
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
 chsh -s /bin/csh root
