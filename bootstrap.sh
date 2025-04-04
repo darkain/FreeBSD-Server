@@ -130,7 +130,7 @@ fi
 
 # SET BOOT DELAY TO 2 SECONDS INSTEAD OF DEFAULT OF 10
 if [ `which pkg 2>/dev/null` ]; then
-	echo 'autoboot_delay="2"' >> /boot/loader.conf
+	sysrc -f /boot/loader.conf autoboot_delay="2"
 fi
 
 
