@@ -32,7 +32,7 @@ pkg update
 pkg search -r FreeBSD-base BSD | \
 awk '!/-(dbg|man|dev|lib32|src|kernel)-/' | \
 sed 's/-[0-9][0-9]\.[0-9].*//' | \
-xargs pkg install -y -r FreeBSD-base FreeBSD-kernel-generic
+xargs pkg install -y -r FreeBSD-base FreeBSD-kernel-generic FreeBSD-clibs-dev
 
 
 
