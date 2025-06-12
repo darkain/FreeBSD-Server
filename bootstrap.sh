@@ -135,6 +135,13 @@ fi
 
 
 
+# DISABLE BELL BEEPING LOLOLOL
+if [ `which pkg 2>/dev/null` ]; then
+	sysrc allscreens_kbdflags="-b quiet.off"
+fi
+
+
+
 # RELOAD CSH CONFIG FOR OMG COLOURZ!
 chsh -s /bin/csh root
 exec tcsh
