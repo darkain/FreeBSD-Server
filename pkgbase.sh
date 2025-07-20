@@ -1,38 +1,12 @@
 #!/bin/sh
 
 
-# REPO CONFIG NEEDS A HOME IF IT DOESN'T EXIST
-mkdir -p /usr/local/etc/pkg/repos/
+# USE PKGBASIFY
+cd /tmp
+fetch https://github.com/FreeBSDFoundation/pkgbasify/raw/refs/heads/main/pkgbasify.lua
+chmod +x ./pkgbasify.lua
+./pkgbasify.lua
 
-
-
-
-# CREATE NEW PKG CONF FOR PKGBASE
-cat <<'EOF' >/usr/local/etc/pkg/repos/FreeBSD-base.conf
-FreeBSD-base: {
-  url: "pkg+https://pkg.FreeBSD.org/${ABI}/base_release_2",
-  mirror_type: "srv",
-  signature_type: "fingerprints",
-  fingerprints: "/usr/share/keys/pkg",
-  enabled: yes
-}
-EOF
-
-
-
-
-# UPDATE PKG WITH NEW REPO
-pkg update
-
-
-
-
-# INSTALL PKGBASE
-# AND FILTER OUT SOME PACKAGES
-pkg search -r FreeBSD-base BSD | \
-awk '!/-(dbg|man|dev|lib32|src|kernel)-/' | \
-sed 's/-[0-9][0-9]\.[0-9].*//' | \
-xargs pkg install -y -r FreeBSD-base FreeBSD-kernel-generic FreeBSD-clibs-dev
 
 
 
