@@ -28,12 +28,6 @@ vipw
 
 
 
-# CLEAN UP OLD FILES
-find / -name "*.pkgsave" | xargs rm -f
-
-
-
-
 # FIX ROOT SHELL
 ! rm /root/.cshrc 2>/dev/null
 ln -s /vince/root/.cshrc /root/
@@ -46,3 +40,9 @@ chsh -s /bin/csh root
 ! rm /etc/ssh/sshd_config 2>/dev/null
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
 service sshd restart
+
+
+
+
+# CLEAN UP OLD FILES
+find / -name "*.pkgsave" | xargs rm -f
