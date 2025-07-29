@@ -45,4 +45,4 @@ service sshd restart
 
 
 # CLEAN UP OLD FILES
-find / -name "*.pkgsave" | xargs rm -f
+find / -fstype zfs -name "*.pkgsave" | xargs rm -f
