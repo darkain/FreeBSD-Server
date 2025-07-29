@@ -132,7 +132,6 @@ if (`whereis -b grcat` != 'grcat:') then
 		lsof \
 		lspci \
 		mount \
-		mtr \
 		netstat \
 		ping \
 		ping6 \
