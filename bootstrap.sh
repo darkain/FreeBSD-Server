@@ -47,11 +47,11 @@ elif [ `which pkg 2>/dev/null` ]; then
 		env ASSUME_ALWAYS_YES=YES pkg bootstrap
 	fi
 
-	# REPLACE GIT-LITE WITH GIT ON FREEBSD
+	# REPLACE GIT-LITE WITH GIT-TINY ON FREEBSD
 	if `pkg info git-lite >/dev/null 2>&1`; then
 		pkg install -y ca_root_nss
 	else
-		pkg install -y git ca_root_nss
+		pkg install -y git-tiny ca_root_nss
 	fi
 
 	# FORCE HTTPS INSTEAD OF HTTP
