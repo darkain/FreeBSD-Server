@@ -9,7 +9,7 @@ if [ `uname -i` = 'FREENAS64' -o `uname -i` = 'TRUENAS' ]; then
 elif [ `which opnsense-version 2>/dev/null` ]; then
 	# Do nothing on OPNsense
 else
-	pkg install -y ipmitool libstatgrab check_mk_agent
+	pkg install -y python ipmitool libstatgrab check_mk_agent
 fi
 
 # Register Checkmk TCP Port
