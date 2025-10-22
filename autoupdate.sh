@@ -37,5 +37,8 @@ pkg install -y pkg
 # UPDATE PACKAGES
 pkg update && pkg upgrade -y
 
+# ENSURE WE HAVE LATEST AUDIT DATABASE TOO
+pkg audit -F
+
 # BREAK-FIX FOR PKGBASE SOMETIMES BREAKING THE TMP FOLDER
 chmod 777 /tmp
