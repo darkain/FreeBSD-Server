@@ -7,7 +7,7 @@ service linux start
 
 
 # INSTALL THE DESKTOP
-pkg install -y kde plasma6-sddm-kcm sddm xorg firefox linux-sublime-text4
+pkg install -y kde plasma6-sddm-kcm sddm xorg firefox linux-sublime-text4 cool-retro-term hw-probe dmidecode pciutils usbutils webcamd obs-studio linux-discord wine-proton
 
 #WE NEED DBUS
 service dbus enable && service dbus start
