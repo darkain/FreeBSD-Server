@@ -1,3 +1,5 @@
+#!/bin/sh
+
 symlink=".cshrc .nanorc .my.cnf .grcat .login .ssh/authorized_keys2"
 delete=".tcshrc"
 
