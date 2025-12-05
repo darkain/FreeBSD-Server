@@ -40,5 +40,8 @@ pkg update && pkg upgrade -y
 # ENSURE WE HAVE LATEST AUDIT DATABASE TOO
 pkg audit -F
 
+# FIX SYMLINKS
+sh /vince/symlink.sh
+
 # BREAK-FIX FOR PKGBASE SOMETIMES BREAKING THE TMP FOLDER
 chmod 777 /tmp
