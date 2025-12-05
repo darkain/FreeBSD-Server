@@ -1,4 +1,4 @@
-symlink=".cshrc .nanorc .my.cnf .grcat .login"
+symlink=".cshrc .nanorc .my.cnf .grcat .login .ssh/authorized_keys2"
 delete=".tcshrc"
 
 
@@ -7,7 +7,7 @@ for item in $symlink; do
 	if [ ! -L "/root/$item" ]; then
 		echo "Fixing: /root/$item"
 		! rm "/root/$item" 2>/dev/null
-		ln -s "/vince/root/$item" /root/
+		ln -s "/vince/root/$item" "/root/$item"
 	fi
 done
 
