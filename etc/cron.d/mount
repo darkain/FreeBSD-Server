@@ -1,0 +1,1 @@
+* * * * *	root	/sbin/mount | /usr/bin/grep -q 's3fs' || /sbin/mount -a
