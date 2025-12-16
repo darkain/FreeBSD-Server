@@ -13,7 +13,8 @@ mkdir -p /mnt/upgrade/usr/share/keys/pkgbase-15/trusted/
 
 
 # DOWNLOAD TRUSTED KEY FROM FREEBSD SRC MIRROR
-fetch -o /mnt/upgrade/usr/share/keys/pkgbase-15/trusted/awskms-15 https://github.com/freebsd/freebsd-src/raw/refs/heads/main/share/keys/pkgbase-15/trusted/awskms-15
+fetch -o /mnt/upgrade/usr/share/keys/pkgbase-15/trusted/awskms-15 \
+  https://github.com/freebsd/freebsd-src/raw/refs/heads/main/share/keys/pkgbase-15/trusted/awskms-15
 
 
 # SETUP SOME VARIABLES TO MAKE LIFE A LITTLE EASIER
