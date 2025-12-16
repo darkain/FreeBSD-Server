@@ -29,7 +29,7 @@ sed -i.bak2 "s#base_release_3#base_release_0#" "$FILE_PATH"
 
 
 # UPGRADE FREEBSD!
-env ABI=FreeBSD:15:amd64 pkg-static -c /mnt/upgrade upgrade -y -r FreeBSD-base
+env PERMISSIVE=yes ABI=FreeBSD:15:amd64 pkg-static -c /mnt/upgrade upgrade -y -r FreeBSD-base
 
 
 # SWITCH TO 15.0-RELEASE
