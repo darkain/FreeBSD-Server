@@ -4,7 +4,7 @@
 # REMOVE EXISTING INSTALL BEOFRE ATTEMPTING INSTALL
 if [ "$1" = "reinstall" ]; then
 	echo "UNINSTALLING OPEN VM TOOLS!"
-  pkg rmeove -f open-vm-tools-nox11 open-vm-kmod
+  pkg remove -f open-vm-tools-nox11 open-vm-kmod
 fi
 
 
