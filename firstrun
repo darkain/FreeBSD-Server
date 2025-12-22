@@ -1,18 +1,26 @@
 #!/bin/sh
 
+# REDHAT BASED DISTROS
 if [ `which yum 2>/dev/null` ]; then
 	yum install -y epel-release
 	yum update -y
 	yum install -y tcsh freecolor nano screen ipcalc wget tmux git htop mtr eza pwgen bind-utils
 	# TODO: add "grc"
 
+# DEBIAN BASED DISTROS
 elif [ `which apt 2>/dev/null` ]; then
 	apt install -y tcsh nano screen ipcalc wget tmux grc git htop mtr-tiny
 	# TODO: add "freecolor", "eza", bind tools, pwgen
 
+# FREENAS/TRUENAS CORE
+elif [ `uname -i` = 'FREENAS64' -o `uname -i` = 'TRUENAS' ]; then
+	echo "Install your stuff manually, because things BREAK!!!"
+
+# FREEBSD
 elif [ `which pkg 2>/dev/null` ]; then
 	pkg install -y eza freecolor nano screen ipcalc wget tmux grc htop btop mtr-nox11 bind-tools pwgen bsdinfo ncdu2
 
+# WTF ARE YOU EVEN DOING !?
 else
 	echo "Unknown package manager" 1>&2
 	exit 1
