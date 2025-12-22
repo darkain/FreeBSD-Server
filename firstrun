@@ -14,7 +14,7 @@ elif [ `which apt 2>/dev/null` ]; then
 
 # FREENAS/TRUENAS CORE
 elif [ `uname -i` = 'FREENAS64' -o `uname -i` = 'TRUENAS' ]; then
-	echo "Install your stuff manually, because things BREAK!!!"
+	pkg install eza freecolor nano screen ipcalc wget tmux htop btop mtr-nox11 bind-tools pwgen bsdinfo ncdu2
 
 # FREEBSD
 elif [ `which pkg 2>/dev/null` ]; then
