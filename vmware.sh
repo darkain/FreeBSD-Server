@@ -10,5 +10,5 @@ sysrc vmware_guest_kmod_enable="YES"
 sysrc vmware_guestd_enable="YES"
 
 # START OPEN-VM-TOOLS SERVICES
-service vmware-guestd start
-service vmware-kmod start
+service vmware-guestd restart
+service vmware-kmod restart
