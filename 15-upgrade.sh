@@ -4,6 +4,10 @@
 set -e
 
 
+# GET THE CURRENT ARCHITECTURE
+ARCH=$(uname -p)
+
+
 # CREATE BOOT ENVIRONMENT FOR 15.0-RELEASE
 echo 'Creating boot environment'
 bectl create pre-15.0-RELEASE
@@ -37,7 +41,7 @@ sed -i.bak2 "s#base_release_3#base_release_0#" "$FILE_PATH"
 
 # UPGRADE FREEBSD!
 echo 'Running upgrade...'
-env PERMISSIVE=yes ABI=FreeBSD:15:amd64 pkg-static -c /mnt/upgrade upgrade -y -r FreeBSD-base
+env PERMISSIVE=yes ABI=FreeBSD:15:$ARCH pkg-static -c /mnt/upgrade upgrade -y -r FreeBSD-base
 
 
 # SWITCH TO 15.0-RELEASE
