@@ -41,6 +41,7 @@ sed -i.bak2 "s#base_release_3#base_release_0#" "$FILE_PATH"
 
 # UPGRADE FREEBSD!
 echo 'Running upgrade...'
+env PERMISSIVE=yes ABI=FreeBSD:15:$ARCH pkg-static -c /mnt/upgrade install misc/compat14x
 env PERMISSIVE=yes ABI=FreeBSD:15:$ARCH pkg-static -c /mnt/upgrade upgrade -y -r FreeBSD-base
 
 
