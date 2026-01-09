@@ -35,12 +35,13 @@ mkdir /usr/local/etc/check_mk
 mkdir /usr/local/lib/check_mk_agent
 mkdir /usr/local/lib/check_mk_agent/local
 mkdir /usr/local/lib/check_mk_agent/plugins
+mkdir /usr/local/lib/check_mk_agent/plugins/3600
 ln -s /usr/local/etc/check_mk /etc/check_mk
 ln -s /usr/local/lib/check_mk_agent /var/lib/check_mk_agent
 
 
 # Install "pkg audit" plugin
-ln -s /vince/usr/local/lib/check_mk_agent/plugins/0-pkg_audit.py /usr/local/lib/check_mk_agent/plugins/
+ln -s /vince/usr/local/lib/check_mk_agent/plugins/0-pkg_audit.py /usr/local/lib/check_mk_agent/plugins/3600/
 
 
 # Fetch latest check_mk_agent file
