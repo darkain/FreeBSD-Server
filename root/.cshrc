@@ -23,6 +23,7 @@ alias		quit		"exit"
 alias		fullexit	"clear && exit"
 alias		fullquit	"clear && exit"
 alias		innotop		"innotop -m Q"
+alias		restart		"shutdown -r now"
 
 # MinIO Client - FreeBSD uses a long binary name instead of "mc"
 if (`whereis -b minio-client` != 'minio-client:') then
