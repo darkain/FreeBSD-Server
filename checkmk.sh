@@ -29,6 +29,9 @@ LINE='checkmk-agent stream tcp nowait root /usr/local/bin/check_mk_agent check_m
 FILE='/etc/inetd.conf'
 grep -qF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
 
+# FOR STRATIPI, TODO: DO THIS AUTOMATICALLY ON THOSE SYSTEMS
+# checkmk-agent stream tcp nowait root /usr/bin/nice check_mk_agent -n 20 /usr/sbin/idprio 31 /usr/local/bin/check_mk_agent
+
 
 # Create missing folders
 mkdir /usr/local/etc/check_mk
