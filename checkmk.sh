@@ -44,6 +44,7 @@ ln -s /usr/local/lib/check_mk_agent /var/lib/check_mk_agent
 
 
 # Install "pkg audit" plugin
+rm /usr/local/lib/check_mk_agent/plugins/0-pkg_audit.py
 ln -s /vince/usr/local/lib/check_mk_agent/plugins/0-pkg_audit.py /usr/local/lib/check_mk_agent/plugins/3600/
 
 
