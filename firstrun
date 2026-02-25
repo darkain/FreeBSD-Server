@@ -19,6 +19,7 @@ elif [ `uname -i` = 'FREENAS64' -o `uname -i` = 'TRUENAS' ]; then
 # FREEBSD
 elif [ `which pkg 2>/dev/null` ]; then
 	pkg install -y eza freecolor nano screen ipcalc wget tmux grc htop btop mtr-nox11 bind-tools pwgen bsdinfo ncdu2
+	pkg install -y FreeBSD-csh
 
 # WTF ARE YOU EVEN DOING !?
 else
