@@ -15,6 +15,7 @@ elif [ `which opnsense-version 2>/dev/null` ]; then
 	exit 0
 else
 	pkg install -y python ipmitool libstatgrab check_mk_agent
+	pkg install -y FreeBSD-inetd
 fi
 
 
