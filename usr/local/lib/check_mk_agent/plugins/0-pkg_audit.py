@@ -6,6 +6,8 @@ import sys
 import json
 import subprocess
 
+print('<<<local:sep(0)>>>')
+
 out		= subprocess.run(['/usr/local/sbin/pkg', 'audit', '--raw=json-compact', '-q'], capture_output=True, text=True)
 data	= json.loads(out.stdout)
 count	= data.get("pkg_count", 0)
