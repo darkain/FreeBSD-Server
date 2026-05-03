@@ -44,4 +44,4 @@ pkg audit -F
 sh /vince/symlink.sh
 
 # BREAK-FIX FOR PKGBASE SOMETIMES BREAKING THE TMP FOLDER
-chmod 777 /tmp
+chmod 1777 /tmp
