@@ -79,6 +79,15 @@ sh firstrun
 sh symlink.sh
 
 
+# INSTALL OPEN-VM-TOOLS
+if [ `sysctl -n security.jail.jailed` = 0 ];
+	hv_vendor=$(sysctl -n hw.hv_vendor 2>/dev/null)
+	if [ -n "$hv_vendor" ] && echo "$hv_vendor" | grep -qi 'vmware'; then
+		sh vmware.sh
+	fi
+fi
+
+
 # ENABLE SSH
 ! rm /etc/ssh/sshd_config 2>/dev/null
 ln -s /vince/etc/ssh/sshd_config /etc/ssh/
