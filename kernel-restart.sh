@@ -31,6 +31,6 @@ if [ -n "$PACKAGE" ]; then
 	INSTALLED=$(pkg info "$PACKAGE" | grep '^Version' | sed 's/.*: *//')
 	if [ "$RUNNING" != "$INSTALLED" ]; then
 		echo "Kernel update detected: running=$RUNNING : installed=$INSTALLED"
-#		/sbin/shutdown -r +1 "Kernel update detected — rebooting"
+		/sbin/shutdown -r +1 "Kernel update detected — rebooting"
 	fi
 fi
