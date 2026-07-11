@@ -1,1 +1,3 @@
+#!/bin/sh
+ssh-add -e /usr/local/lib/opensc-pkcs11.so
 ssh-add -s /usr/local/lib/opensc-pkcs11.so
