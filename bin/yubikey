@@ -1,3 +1,9 @@
 #!/bin/sh
-ssh-add -e /usr/local/lib/opensc-pkcs11.so
+
+pkill -9 ssh-agent 2>/dev/null
+
+eval "$(ssh-agent -a ~/.ssh/agent.sock -s)"
+
+ssh-add -e /usr/local/lib/opensc-pkcs11.so 2>/dev/null
 ssh-add -s /usr/local/lib/opensc-pkcs11.so
+
