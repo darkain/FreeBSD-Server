@@ -1,0 +1,8 @@
+#!/bin/sh
+
+export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_BASE_URL=http://192.168.23.83:11434
+
+
+#/usr/local/bin/claude --model qwen3.6
+/usr/local/bin/claude --model qwen3.6:35b-a3b-q8_0
