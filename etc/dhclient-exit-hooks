@@ -1,0 +1,33 @@
+#!/bin/sh
+
+logger -t dhclient-hook "Hook triggered! Reason: $reason, Interface: $interface"
+
+# Only run if we received new NTP servers from the DHCP lease
+if [ -n "$new_ntp_servers" ]; then
+
+	# Define paths
+	NTP_CONF="/etc/ntp.conf"
+	TMP_CONF="/tmp/ntp.conf.dhcp"
+
+	# Strip existing DHCP-generated lines to prevent compounding duplicates
+	if [ -f "$NTP_CONF" ]; then
+		sed '/# BEGIN DHCP NTP/,/# END DHCP NTP/d' "$NTP_CONF" > "$TMP_CONF"
+	else
+		touch "$TMP_CONF"
+	fi
+
+	# Append the new DHCP NTP servers to the temporary file
+	echo "# BEGIN DHCP NTP" >> "$TMP_CONF"
+	for server in $new_ntp_servers; do
+		echo "server $server iburst" >> "$TMP_CONF"
+	done
+	echo "# END DHCP NTP" >> "$TMP_CONF"
+
+	# Safely overwrite the real configuration file
+	mv "$TMP_CONF" "$NTP_CONF"
+
+	# Restart the ntpd service to apply changes if it is enabled
+	if service ntpd status >/dev/null 2>&1; then
+		service ntpd restart
+	fi
+fi
