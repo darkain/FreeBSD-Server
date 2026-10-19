@@ -8,10 +8,6 @@ set -e
 ARCH=$(uname -p)
 
 
-# INSTALL COMPATIBILITY PACKAGE
-pkg install -y compat14x-$ARCH
-
-
 # CREATE BOOT ENVIRONMENT FOR 15.0-RELEASE
 echo 'Creating boot environment'
 bectl create pre-15.0-RELEASE
