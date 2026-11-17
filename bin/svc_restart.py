@@ -4,6 +4,12 @@ import json, os, subprocess, sys
 
 
 
+# Permissions check
+if os.geteuid() != 0:
+	sys.exit("Error: Must be run as root")
+
+
+
 # Quick helper function
 def exec(cmd):
 	return subprocess.run(cmd, text=True, capture_output=True)
@@ -12,7 +18,7 @@ def exec(cmd):
 
 # Get initial binary file list
 restart				= "--restart" in sys.argv
-raw					= exec(["checkrestart", "--libxo", "json"]).stdout.strip()
+raw					= exec(["checkrestart", "-j", "0", "--libxo", "json"]).stdout.strip()
 procs				= json.loads(raw).get("checkrestart", {}).get("process", [])
 bins				= {p["arguments"].split()[0] for p in procs if p.get("arguments", "").startswith("/")}
 
