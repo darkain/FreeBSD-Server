@@ -40,6 +40,9 @@ pkg update && pkg upgrade -y
 # ENSURE WE HAVE LATEST AUDIT DATABASE TOO
 pkg audit -F
 
+# ENSURE DEFAULT PACKAGES ARE INSTALLED
+sh /vince/firstrun
+
 # FIX SYMLINKS
 sh /vince/symlink.sh
 
