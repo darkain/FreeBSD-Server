@@ -45,3 +45,6 @@ sh /vince/symlink.sh
 
 # BREAK-FIX FOR PKGBASE SOMETIMES BREAKING THE TMP FOLDER
 chmod 1777 /tmp
+
+# RESTART VMWARE TOOLS JUST IN CASE IT UPDATED
+sysrc -c vmware_guestd_enable=YES && service vmware-guestd restart
