@@ -49,5 +49,5 @@ sh /vince/symlink.sh
 # BREAK-FIX FOR PKGBASE SOMETIMES BREAKING THE TMP FOLDER
 chmod 1777 /tmp
 
-# RESTART VMWARE TOOLS JUST IN CASE IT UPDATED
-sysrc -c vmware_guestd_enable=YES && service vmware-guestd restart
+# RESTART SERVICES
+/usr/bin/env python3 /vince/bin/svc_restart.py --restart
